@@ -14,9 +14,3 @@ About::~About()
     delete ui;
 }
 
-
-void About::on_btnClose_clicked()
-{
-    qDebug()<<"Exit About"<<endl;
-    exit(1);
-}

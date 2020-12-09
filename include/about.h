@@ -16,7 +16,6 @@ public:
     ~About();
 
 private slots:
-    void on_btnClose_clicked();
 
 private:
     Ui::About *ui;

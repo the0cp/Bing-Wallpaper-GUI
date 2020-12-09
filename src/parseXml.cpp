@@ -1,5 +1,4 @@
 #include "include/proc.h"
-#include "include/download.h"
 
 char *parseXml(char *TIME_PX, char *USRNAME)
 {
@@ -17,7 +16,7 @@ char *parseXml(char *TIME_PX, char *USRNAME)
   	if (pdoc == NULL)
   	{
         qDebug()<<"ERROR:cannot open xml!!!"<<endl;
-    	exit(1);
+        return NULL;
   	}
 
   	proot = xmlDocGetRootElement(pdoc);
@@ -25,8 +24,8 @@ char *parseXml(char *TIME_PX, char *USRNAME)
   	if(proot == NULL)
   	{
         qDebug()<<"ERROR: Xml is empty!!!"<<endl;
-    	exit(1);
-  	}
+        return NULL;
+    }
 
   	pcur = proot -> xmlChildrenNode;
 

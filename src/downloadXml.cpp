@@ -20,7 +20,9 @@ void downloadXml(char *TIME_XML, char *USRNAME)
     curl_easy_setopt(curlXml, CURLOPT_URL, xml_url);
     curl_easy_setopt(curlXml, CURLOPT_WRITEFUNCTION, write_data);
     curl_easy_setopt(curlXml, CURLOPT_WRITEDATA, fpXml);
-    curl_easy_setopt (curlXml, CURLOPT_NOPROGRESS, 0);  
+    curl_easy_setopt(curlXml, CURLOPT_PROGRESSFUNCTION, downloadCallback);
+    curl_easy_setopt(curlXml, CURLOPT_PROGRESSDATA,NULL);
+    curl_easy_setopt (curlXml, CURLOPT_NOPROGRESS, FALSE);
     resXml = curl_easy_perform(curlXml);
     curl_easy_cleanup(curlXml);
     fclose(fpXml);

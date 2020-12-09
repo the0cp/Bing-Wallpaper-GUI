@@ -19,7 +19,9 @@ int downloadImg(char *TIME_IMG, char *USRNAME)
     curl_easy_setopt(curlImg, CURLOPT_URL, img_url_f);
     curl_easy_setopt(curlImg, CURLOPT_WRITEFUNCTION, write_data);
     curl_easy_setopt(curlImg, CURLOPT_WRITEDATA, fpImg);
-    //curl_easy_setopt(curlImg, CURLOPT_NOPROGRESS, 0);
+    curl_easy_setopt(curlImg, CURLOPT_PROGRESSFUNCTION, downloadCallback);
+    curl_easy_setopt(curlImg, CURLOPT_PROGRESSDATA,NULL);
+    curl_easy_setopt(curlImg, CURLOPT_NOPROGRESS, FALSE);
     resImg = curl_easy_perform(curlImg);
     fclose(fpImg);
   }

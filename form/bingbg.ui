@@ -32,6 +32,12 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Linux Libertine Display O</family>
+         <italic>true</italic>
+        </font>
+       </property>
        <property name="title">
         <string>Get Wallpaper</string>
        </property>
@@ -43,6 +49,13 @@
           <width>121</width>
           <height>41</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Linux Libertine Display O</family>
+          <pointsize>15</pointsize>
+          <italic>true</italic>
+         </font>
         </property>
         <property name="text">
          <string>Fetch</string>
@@ -67,6 +80,12 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QGroupBox" name="groupBox_2">
+       <property name="font">
+        <font>
+         <family>Linux Libertine Display O</family>
+         <italic>true</italic>
+        </font>
+       </property>
        <property name="title">
         <string>GroupBox</string>
        </property>
@@ -124,8 +143,16 @@
           <height>21</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Linux Libertine Display O</family>
+          <weight>50</weight>
+          <italic>true</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="value">
-         <number>24</number>
+         <number>0</number>
         </property>
        </widget>
       </widget>
