@@ -1,4 +1,4 @@
-#include "include/bingbg.h"
+﻿#include "include/bingbg.h"
 #include "ui_bingbg.h"
 #include "include/proc.h"
 
@@ -64,7 +64,8 @@ void BingBG::doProcessReadyRead()
 
 void BingBG::doProcessFinished()
 {
-    files->close();
+    files -> flush();
+    files -> close();
 }
 
 void BingBG::doProcessDownloadProgress(qint64 recv_total, qint64 all_total)
@@ -78,7 +79,29 @@ void BingBG::doProcessError(QNetworkReply::NetworkError code)
     qDebug() << code;
 }
 
-void BingBG::download(QString URL, QString PATH)
+void BingBG::downloadXml(QString URL, QString PATH)
+{
+    QNetworkRequest request;
+    QString url = URL;
+    request.setUrl(QUrl(url));
+    reply = manager -> get(request);
+    connect(reply, &QNetworkReply::readyRead, this, &BingBG::doProcessReadyRead);
+    connect(reply, &QNetworkReply::finished, this, &BingBG::doProcessFinished);
+    connect(reply, &QNetworkReply::downloadProgress, this, &BingBG::doProcessDownloadProgress);
+    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this, &BingBG::doProcessError);
+    connect(reply, &QNetworkReply::finished, this, &BingBG::downloadImg);
+    QStringList list = url.split("/");
+    files->setFileName(PATH);
+    bool ret = files->open(QIODevice::WriteOnly|QIODevice::Truncate);
+    if(!ret)
+    {
+        return;
+    }
+    ui->progressBar->setValue(0);
+    ui->progressBar->setMinimum(0);
+}
+
+void BingBG::main_downloadImg(QString URL, QString PATH)
 {
     QNetworkRequest request;
     QString url = URL;
@@ -99,6 +122,19 @@ void BingBG::download(QString URL, QString PATH)
     ui->progressBar->setMinimum(0);
 }
 
+void BingBG::downloadImg()
+{
+    char *time = geTime();
+    char *user = getlogin();
+    char *imgUrl_full = parseXml(time, user);
+    qDebug()<<imgUrl_full<<endl;
+    QString qtime(time);
+    QString quser(user);
+    QString qimgUrl_full(imgUrl_full);
+    QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
+    QString imgPath = folderPath + "/Wallpaper.jpg";
+    main_downloadImg(qimgUrl_full, imgPath);
+}
 
 void BingBG::on_btnFetch_clicked()
 {
@@ -109,11 +145,12 @@ void BingBG::on_btnFetch_clicked()
     qDebug()<<time<<endl;
     qDebug()<<user<<endl;
     makeDir(time, user);
-    char *hhh = "https://www.bing.com/th?id=OHR.Kinkakuji_EN-US8643828412_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp";
-    QString str(hhh);
-    QString sttr = "/home/theodore/wallpaper.jpg";
-    download(str, sttr);
-
-
+    QString qtime(time);
+    QString quser(user);
+    QString xmlUrl = "https://www.bing.com/HPImageArchive.aspx?format=xml&idx=0&n=1&mkt=en-US";
+    QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
+    QString xmlPath = folderPath + "/index.xml";
+    QString imgPath = folderPath + "/Wallpaper.jpg";
+    downloadXml(xmlUrl, xmlPath);
     //ui -> btnFetch -> setDisabled(false);
 }

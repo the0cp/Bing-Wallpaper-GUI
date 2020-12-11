@@ -1,4 +1,4 @@
-#ifndef BINGBG_H
+﻿#ifndef BINGBG_H
 #define BINGBG_H
 
 #include <QNetworkAccessManager>
@@ -24,7 +24,7 @@ public:
     ~BingBG();
     void initDownload();
 
-    void download(QString URL, QString PATH);
+    void downloadXml(QString URL, QString PATH);
 
     void doProcessReadyRead();
 
@@ -33,6 +33,10 @@ public:
     void doProcessDownloadProgress(qint64,qint64);
 
     void doProcessError(QNetworkReply::NetworkError code);
+
+    void main_downloadImg(QString URL, QString PATH);
+
+    void downloadImg();
 
     About *p_OpenAbout;
     Author *p_OpenAuthor;

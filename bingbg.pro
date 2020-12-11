@@ -43,7 +43,9 @@ FORMS += \
     form/settings.ui
 
 TRANSLATIONS += \
-    BBG-QT_en_US.ts
+    lang/lang_en_US.ts \
+    lang/lang_zh_CN.ts \
+    lang/lang_fr_FR.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
