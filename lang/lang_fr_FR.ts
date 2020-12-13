@@ -6,7 +6,7 @@
     <message>
         <location filename="../form/about.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../form/about.ui" line="26"/>
@@ -20,7 +20,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 1.0&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Copyright 2020 Theodore Cooper. All rights reserved.&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#xa0;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -28,7 +28,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/author.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../form/author.ui" line="45"/>
@@ -46,7 +46,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="14"/>
         <source>Bing Backgrounds Getter</source>
-        <translation type="unfinished">Bing Backgrounds Getter</translation>
+        <translation>Bing Backgrounds Getter</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="42"/>
@@ -56,7 +56,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="61"/>
         <source>Fetch</source>
-        <translation type="unfinished">Chercher</translation>
+        <translation>Chercher</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="64"/>
@@ -86,7 +86,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="175"/>
         <source>Exit</source>
-        <translation type="unfinished">Sortie</translation>
+        <translation>Sortie</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="178"/>
@@ -99,7 +99,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../form/bingbg.ui" line="209"/>
         <source>About</source>
         <extracomment>About</extracomment>
-        <translation type="unfinished">Sur</translation>
+        <translation>Sur</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="212"/>
@@ -109,7 +109,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="217"/>
         <source>Author</source>
-        <translation type="unfinished">Auteur</translation>
+        <translation>Auteur</translation>
     </message>
 </context>
 <context>
@@ -117,7 +117,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/settings.ui" line="16"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -125,22 +125,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/exitconfirmation.ui" line="20"/>
         <source>Exit?</source>
-        <translation type="unfinished">Sortie?</translation>
+        <translation>Sortie?</translation>
     </message>
     <message>
         <location filename="../form/exitconfirmation.ui" line="32"/>
         <source>Exit Bing Backgrounds Getter?</source>
-        <translation type="unfinished">Voulez-vous quitter le Bing Backgrounds Getter?</translation>
+        <translation>Voulez-vous quitter le Bing Backgrounds Getter?</translation>
     </message>
     <message>
         <location filename="../form/exitconfirmation.ui" line="45"/>
         <source>Exit</source>
-        <translation type="unfinished">Sortie</translation>
+        <translation>Sortie</translation>
     </message>
     <message>
         <location filename="../form/exitconfirmation.ui" line="58"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 </TS>

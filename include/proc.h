@@ -1,4 +1,4 @@
-#ifndef PROC_H
+﻿#ifndef PROC_H
 #define PROC_H
 
 //#define _GNU_SOURCE
@@ -19,6 +19,8 @@
 #include <QDebug>
 
 extern char *geTime();
+extern char *readConf();
 extern void makeDir(char *TIME_MD, char *USRNAME);
 extern char *parseXml(char *TIME_PX, char *USRNAME);
+extern void conf(char *USRNAME);
 #endif // PROC_H

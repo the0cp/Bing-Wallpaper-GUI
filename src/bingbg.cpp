@@ -127,13 +127,20 @@ void BingBG::downloadImg()
     char *time = geTime();
     char *user = getlogin();
     char *imgUrl_full = parseXml(time, user);
-    qDebug()<<imgUrl_full<<endl;
-    QString qtime(time);
-    QString quser(user);
-    QString qimgUrl_full(imgUrl_full);
-    QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
-    QString imgPath = folderPath + "/Wallpaper.jpg";
-    main_downloadImg(qimgUrl_full, imgPath);
+    if(imgUrl_full == NULL)
+    {
+        qDebug()<<"<Failed to parse xml>"<<endl;
+    }
+    else
+    {
+        qDebug()<<imgUrl_full<<endl;
+        QString qtime(time);
+        QString quser(user);
+        QString qimgUrl_full(imgUrl_full);
+        QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
+        QString imgPath = folderPath + "/Wallpaper.jpg";
+        main_downloadImg(qimgUrl_full, imgPath);
+    }
 }
 
 void BingBG::on_btnFetch_clicked()
@@ -151,6 +158,10 @@ void BingBG::on_btnFetch_clicked()
     QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
     QString xmlPath = folderPath + "/index.xml";
     QString imgPath = folderPath + "/Wallpaper.jpg";
+
+    QString config(readConf());
+    qDebug()<<config<<endl;
+
     downloadXml(xmlUrl, xmlPath);
     //ui -> btnFetch -> setDisabled(false);
 }

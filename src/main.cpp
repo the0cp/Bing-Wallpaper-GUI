@@ -1,4 +1,4 @@
-#include "include/bingbg.h"
+﻿#include "include/bingbg.h"
 #include "ui_bingbg.h"
 #include "include/proc.h"
 #include <QApplication>
@@ -7,6 +7,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    conf(getlogin());
     BingBG w;
     w.show();
     return a.exec();
