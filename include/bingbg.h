@@ -5,6 +5,7 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QFile>​
+#include <QDesktopServices>
 #include <QMainWindow>
 #include "include/about.h"
 #include "include/author.h"
@@ -38,6 +39,8 @@ public:
 
     void downloadImg();
 
+    void showImg();
+
     About *p_OpenAbout;
     Author *p_OpenAuthor;
     exitConfirmation *p_confirm;
@@ -55,6 +58,8 @@ private slots:
     void openAuthor();
 
     void on_btnFetch_clicked();
+
+    void on_btnOpenfolder_clicked();
 
 private:
     Ui::BingBG *ui;
