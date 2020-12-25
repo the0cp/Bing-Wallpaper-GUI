@@ -7,8 +7,15 @@ BingBG::BingBG(QWidget *parent)
     , ui(new Ui::BingBG)
 {
     ui->setupUi(this);
-
-
+    char *imgPath;
+    char *time = geTime();
+    char *user = getlogin();
+    asprintf(&imgPath, "%s%s%s%s%s", "/home/", user, "/BBG-Download/", time, "/Wallpaper.jpg");
+    qDebug()<<imgPath<<endl;
+    if(access(imgPath, 0) == 0)
+    {
+        showImg();
+    }
     ui -> progressBar -> setMinimum(0);
     ui -> progressBar -> setMaximum(100);
     ui -> progressBar->setValue(0);
@@ -95,9 +102,10 @@ void BingBG::showImg()
     char *user = getlogin();
     QString qtime(time);
     QString quser(user);
-    QString folderPath = "file:/home/" + quser + "/BBG-Download/" + qtime + "/Wallpaper.jpg";
-    QImage *img=new QImage;
-    img->load(folderPath);
+    QString imgPath = "/home/" + quser + "/BBG-Download/" + qtime + "/Wallpaper.jpg";
+    QImage *img = new QImage;
+    img->load(imgPath);
+
     ui->labelImg->setPixmap(QPixmap::fromImage(*img));}
 
 void BingBG::doProcessDownloadProgress(qint64 recv_total, qint64 all_total)

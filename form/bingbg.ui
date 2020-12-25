@@ -6,197 +6,365 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>669</width>
-    <height>548</height>
+    <width>688</width>
+    <height>553</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>688</width>
+    <height>553</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>688</width>
+    <height>553</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Bing Backgrounds Getter</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>181</width>
-      <height>371</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QGroupBox" name="groupBox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <family>Linux Libertine Display O</family>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="title">
-        <string>Get Wallpaper</string>
-       </property>
-       <widget class="QPushButton" name="btnFetch">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>300</y>
-          <width>121</width>
-          <height>41</height>
-         </rect>
+   <layout class="QGridLayout" name="gridLayout" rowstretch="381,79,27" columnstretch="181,481">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Linux Libertine Display O</family>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="title">
+       <string>Get Wallpaper</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2" rowstretch="348,47,3" columnstretch="3,176,3" rowminimumheight="0,0,0">
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btnFetch">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>142</width>
+           <height>37</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Linux Libertine Display O</family>
+           <pointsize>15</pointsize>
+           <italic>true</italic>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(195, 255, 176, 182);</string>
+         </property>
+         <property name="text">
+          <string>Fetch</string>
+         </property>
+         <property name="shortcut">
+          <string>Return</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="2">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="1">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
-        <property name="font">
-         <font>
-          <family>Linux Libertine Display O</family>
-          <pointsize>15</pointsize>
-          <italic>true</italic>
-         </font>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
         </property>
-        <property name="text">
-         <string>Fetch</string>
-        </property>
-        <property name="shortcut">
-         <string>Return</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>10</y>
-      <width>461</width>
-      <height>371</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QGroupBox" name="groupBox_2">
-       <property name="font">
-        <font>
-         <family>Linux Libertine Display O</family>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="title">
-        <string>GroupBox</string>
-       </property>
-       <widget class="QPushButton" name="btnOpenfolder">
-        <property name="geometry">
-         <rect>
-          <x>340</x>
-          <y>300</y>
-          <width>111</width>
-          <height>27</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Open in folder</string>
-        </property>
-        <property name="shortcut">
-         <string>Ctrl+O</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="btnOpenimg">
-        <property name="geometry">
-         <rect>
-          <x>230</x>
-          <y>300</y>
-          <width>101</width>
-          <height>27</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Open image</string>
-        </property>
-        <property name="shortcut">
-         <string>Ctrl+O</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="labelImg">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>30</y>
-          <width>441</width>
-          <height>261</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Linux Libertine Display O</family>
-          <weight>50</weight>
-          <italic>true</italic>
-          <bold>false</bold>
-         </font>
-        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExit">
         <property name="styleSheet">
-         <string notr="true">border-width: 1px;
+         <string notr="true">background-color: rgb(252, 128, 128);</string>
+        </property>
+        <property name="text">
+         <string>Exit</string>
+        </property>
+        <property name="shortcut">
+         <string extracomment="Exit the Bing Backgounds Getter">Ctrl+Q</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Linux Libertine Display O</family>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="title">
+       <string>View</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3" rowstretch="350,3,35,45">
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelImg">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Linux Libertine Display O</family>
+           <weight>50</weight>
+           <italic>true</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-width: 3px;
 border-style: solid;
-border-color: green;</string>
-        </property>
-        <property name="text">
-         <string>No Wallpaper...</string>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>380</y>
-      <width>651</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QGroupBox" name="groupBox_3">
-       <property name="font">
-        <font>
-         <family>Linux Libertine Display O</family>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="title">
-        <string>Progress</string>
-       </property>
-       <widget class="QProgressBar" name="progressBar">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>30</y>
-          <width>631</width>
-          <height>21</height>
-         </rect>
+border-color: green;
+background-color: rgba(80, 255, 118, 15);</string>
+         </property>
+         <property name="text">
+          <string>No Wallpaper...</string>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,2,2">
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnOpenimg">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>83</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(195, 255, 176, 182);</string>
+           </property>
+           <property name="text">
+            <string>Open image</string>
+           </property>
+           <property name="shortcut">
+            <string>Ctrl+O</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnOpenfolder">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>103</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(195, 255, 176, 182);</string>
+           </property>
+           <property name="text">
+            <string>Open in folder</string>
+           </property>
+           <property name="shortcut">
+            <string>Ctrl+O</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
         <property name="font">
          <font>
           <family>Linux Libertine Display O</family>
-          <weight>50</weight>
           <italic>true</italic>
-          <bold>false</bold>
          </font>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QProgressBar
+        <property name="title">
+         <string>Progress</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4" rowstretch="5,1">
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>3</number>
+         </property>
+         <property name="rightMargin">
+          <number>3</number>
+         </property>
+         <property name="bottomMargin">
+          <number>3</number>
+         </property>
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QProgressBar" name="progressBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Linux Libertine Display O</family>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QProgressBar
 {
     text-align:center;
     border-radius:10px;
@@ -207,94 +375,83 @@ QProgressBar::chunk
     border-radius:10px;
     text-align:center;
 }</string>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="labelCurrent">
+             <property name="font">
+              <font>
+               <family>Linux Libertine Display O</family>
+               <italic>true</italic>
+              </font>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>----</string>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelProg">
+             <property name="font">
+              <font>
+               <family>Linux Libertine Display O</family>
+               <italic>true</italic>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="text">
+              <string>Bing Backgrounds Getter</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </widget>
-       <widget class="QLabel" name="labelCurrent">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>121</width>
-          <height>19</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Linux Libertine Display O</family>
-          <italic>true</italic>
-         </font>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>----</string>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="labelProg">
-        <property name="geometry">
-         <rect>
-          <x>486</x>
-          <y>50</y>
-          <width>161</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Linux Libertine Display O</family>
-          <italic>true</italic>
-         </font>
-        </property>
-        <property name="text">
-         <string>Bing Backgrounds Getter</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>569</x>
-      <y>460</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QPushButton" name="btnExit">
-       <property name="text">
-        <string>Exit</string>
-       </property>
-       <property name="shortcut">
-        <string extracomment="Exit the Bing Backgounds Getter">Ctrl+Q</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>669</width>
+     <width>688</width>
      <height>24</height>
     </rect>
    </property>
