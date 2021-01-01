@@ -7,10 +7,13 @@
 #include <QFile>​
 #include <QDesktopServices>
 #include <QMainWindow>
+#include <QCloseEvent>
+#include <QSettings>
+#include <QMessageBox>
+#include <QAbstractButton>
 #include "include/about.h"
 #include "include/author.h"
-#include "include/exitconfirmation.h"
-
+#include "include/de.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class BingBG; }
@@ -22,28 +25,42 @@ class BingBG : public QMainWindow
 
 public:
     BingBG(QWidget *parent = nullptr);
-    ~BingBG();
-    void initDownload();
 
-    void downloadXml(QString URL, QString PATH);
+    ~BingBG();
+
+    void writeState();
+
+    void readState();
+
+    void closeEvent(QCloseEvent *event);
+
+    void initDownload();
 
     void doProcessReadyRead();
 
     void doProcessFinished();
 
+    void enableBtn();
+
     void doProcessDownloadProgress(qint64,qint64);
 
     void doProcessError(QNetworkReply::NetworkError code);
 
-    void main_downloadImg(QString URL, QString PATH);
+    void core_downloadXml(QString URL, QString PATH);
+
+    void downloadXml();
+
+    void core_downloadImg(QString URL, QString PATH);
 
     void downloadImg();
 
     void showImg();
 
+    void setBG();
+
     About *p_OpenAbout;
     Author *p_OpenAuthor;
-    exitConfirmation *p_confirm;
+    DE *p_OpenDE;
     QNetworkAccessManager *manager;
     QNetworkReply *reply;
     QFile *files;
@@ -56,6 +73,8 @@ private slots:
     void openAbout();
 
     void openAuthor();
+
+    void openDE();
 
     void on_btnFetch_clicked();
 

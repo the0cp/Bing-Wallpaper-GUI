@@ -7,6 +7,7 @@ BingBG::BingBG(QWidget *parent)
     , ui(new Ui::BingBG)
 {
     ui->setupUi(this);
+    readState();
     char *imgPath;
     char *time = geTime();
     char *user = getlogin();
@@ -22,6 +23,7 @@ BingBG::BingBG(QWidget *parent)
 
     connect(ui -> actionAbout, SIGNAL(triggered()), this, SLOT(openAbout()));
     connect(ui -> actionAuthor, SIGNAL(triggered()), this, SLOT(openAuthor()));
+    connect(ui -> actionDesktop_Environment, SIGNAL(triggered()), this, SLOT(openDE()));
     initDownload();
 }
 
@@ -30,11 +32,50 @@ BingBG::~BingBG()
     delete ui;
 }
 
+void BingBG::writeState()
+{
+    QSettings settings("Theodore Cooper", "Bingbg");
+
+    settings.beginGroup("MainWindow");
+    settings.setValue("size", size());
+    settings.setValue("pos", pos());
+    settings.setValue("JDCheck", ui->checkJd->isChecked());
+    settings.endGroup();
+}
+
+void BingBG::readState()
+{
+    QSettings settings("Theodore Cooper", "Bingbg");
+
+    settings.beginGroup("MainWindow");
+    resize(settings.value("size", QSize(400, 400)).toSize());
+    move(settings.value("pos", QPoint(200,200)).toPoint());
+    ui->checkJd->setChecked(settings.value("JDCheck").toBool());
+    settings.endGroup();
+}
+
 void BingBG::on_btnExit_clicked()
 {
     qDebug()<<"clicked Exit"<<endl;
-    p_confirm = new exitConfirmation;
-    p_confirm -> show();
+    if (!(QMessageBox::warning(this,tr("exit tip"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
+    {
+        writeState();
+        exit(0);
+    }
+}
+
+
+void BingBG::closeEvent(QCloseEvent *event)
+{
+    if (!(QMessageBox::warning(this,tr("exit tip"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
+    {
+        writeState();
+        event -> accept();
+    }
+    else
+    {
+        event -> ignore();
+    }
 }
 
 void BingBG::on_btnOpenfolder_clicked()
@@ -74,6 +115,13 @@ void BingBG::openAuthor()
     p_OpenAuthor -> show();
 }
 
+void BingBG::openDE()
+{
+    qDebug()<<"open Settings"<<endl;
+    p_OpenDE = new DE;
+    p_OpenDE -> show();
+}
+
 void BingBG::initDownload()
 {
     manager = new QNetworkAccessManager(this);
@@ -94,6 +142,11 @@ void BingBG::doProcessFinished()
     ui->labelCurrent->setText("Done!!!");
     files -> flush();
     files -> close();
+}
+
+void BingBG::enableBtn()
+{
+    ui -> btnFetch -> setDisabled(false);
 }
 
 void BingBG::showImg()
@@ -119,7 +172,7 @@ void BingBG::doProcessError(QNetworkReply::NetworkError code)
     qDebug() << code;
 }
 
-void BingBG::downloadXml(QString URL, QString PATH)
+void BingBG::core_downloadXml(QString URL, QString PATH)
 {
     ui->labelCurrent->setText("downloading xml...");
     QNetworkRequest request;
@@ -131,6 +184,8 @@ void BingBG::downloadXml(QString URL, QString PATH)
     connect(reply, &QNetworkReply::downloadProgress, this, &BingBG::doProcessDownloadProgress);
     connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this, &BingBG::doProcessError);
     connect(reply, &QNetworkReply::finished, this, &BingBG::downloadImg);
+
+
     QStringList list = url.split("/");
     files->setFileName(PATH);
     bool ret = files->open(QIODevice::WriteOnly|QIODevice::Truncate);
@@ -142,7 +197,7 @@ void BingBG::downloadXml(QString URL, QString PATH)
     ui->progressBar->setMinimum(0);
 }
 
-void BingBG::main_downloadImg(QString URL, QString PATH)
+void BingBG::core_downloadImg(QString URL, QString PATH)
 {
     ui->labelCurrent->setText("downloading img...");
     QNetworkRequest request;
@@ -152,6 +207,12 @@ void BingBG::main_downloadImg(QString URL, QString PATH)
     connect(reply, &QNetworkReply::readyRead, this, &BingBG::doProcessReadyRead);
     connect(reply, &QNetworkReply::finished, this, &BingBG::doProcessFinished);
     connect(reply, &QNetworkReply::finished, this, &BingBG::showImg);
+    connect(reply, &QNetworkReply::finished, this, &BingBG::enableBtn);
+    if(ui->checkJd->isChecked() == 0)
+    {
+        connect(reply, &QNetworkReply::finished, this, &BingBG::setBG);
+    }
+
     connect(reply, &QNetworkReply::downloadProgress, this, &BingBG::doProcessDownloadProgress);
     connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this, &BingBG::doProcessError);
     QStringList list = url.split("/");
@@ -163,6 +224,18 @@ void BingBG::main_downloadImg(QString URL, QString PATH)
     }
     ui->progressBar->setValue(0);
     ui->progressBar->setMinimum(0);
+}
+
+void BingBG::downloadXml()
+{
+    char *time = geTime();
+    char *user = getlogin();
+    QString qtime(time);
+    QString quser(user);
+    QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
+    QString xmlUrl = "https://www.bing.com/HPImageArchive.aspx?format=xml&idx=0&n=1&mkt=en-US";
+    QString xmlPath = folderPath + "/index.xml";
+    core_downloadXml(xmlUrl, xmlPath);
 }
 
 void BingBG::downloadImg()
@@ -182,8 +255,13 @@ void BingBG::downloadImg()
         QString qimgUrl_full(imgUrl_full);
         QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
         QString imgPath = folderPath + "/Wallpaper.jpg";
-        main_downloadImg(qimgUrl_full, imgPath);
+        core_downloadImg(qimgUrl_full, imgPath);
     }
+}
+
+void BingBG::setBG()
+{
+    qDebug()<<"set backgrounds!!!"<<endl;
 }
 
 void BingBG::on_btnFetch_clicked()
@@ -199,16 +277,10 @@ void BingBG::on_btnFetch_clicked()
     makeDir(time, user);
     QString qtime(time);
     QString quser(user);
-    QString xmlUrl = "https://www.bing.com/HPImageArchive.aspx?format=xml&idx=0&n=1&mkt=en-US";
-    QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
-    QString xmlPath = folderPath + "/index.xml";
-    QString imgPath = folderPath + "/Wallpaper.jpg";
+    QString confPath = "/home/" + quser + "/.bingbg/" + "qt-config.xml";
+    ui->labelImg->setText("...");
+    downloadXml();
 
-    ui->labelCurrent->setText("reading config...");
-    QString config(readConf());
-    qDebug()<<config<<endl;
-
-    downloadXml(xmlUrl, xmlPath);
     //ui -> btnFetch -> setDisabled(false);
 }
 

@@ -16,12 +16,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/conf.cpp \
-    src/exitconfirmation.cpp \
+    src/de.cpp \
     src/author.cpp \
     src/about.cpp \
-    src/readConf.cpp \
-    src/settings.cpp \
     src/geTime.cpp \
     src/main.cpp \
     src/bingbg.cpp \
@@ -30,19 +27,18 @@ SOURCES += \
 
 
 HEADERS += \
-    include/exitconfirmation.h \
+    include/de.h \
     include/author.h \
     include/about.h \
     include/bingbg.h \
-    include/proc.h \
-    include/settings.h
+    include/proc.h
 
 FORMS += \
+    form/de.ui \
     form/exitconfirmation.ui \
     form/author.ui \
     form/about.ui \
-    form/bingbg.ui \
-    form/settings.ui
+    form/bingbg.ui
 
 TRANSLATIONS += \
     lang/lang_en_US.ts \
