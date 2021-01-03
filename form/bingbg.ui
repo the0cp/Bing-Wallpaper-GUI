@@ -44,47 +44,36 @@
       <property name="title">
        <string>Get Wallpaper</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2" rowstretch="348,47,3,3" columnstretch="3,176,3" rowminimumheight="0,0,0,0">
-       <item row="0" column="1">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="2">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
+      <layout class="QGridLayout" name="gridLayout_2" rowstretch="348,200,0,0,3" columnstretch="3,0,0">
        <item row="3" column="1">
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
+        <widget class="QCheckBox" name="checkJd">
+         <property name="font">
+          <font>
+           <family>Linux Libertine Display O</family>
+           <italic>true</italic>
+          </font>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox
+{
+        spacing: 5px;
+        color: black;
+}
+QCheckBox::indicator 
+{
+        width: 17px;
+        height: 17px;
+}</string>
          </property>
-        </spacer>
+         <property name="text">
+          <string>Set as Background</string>
+         </property>
+         <property name="shortcut">
+          <string notr="true"/>
+         </property>
+        </widget>
        </item>
-       <item row="1" column="1">
+       <item row="2" column="1">
         <widget class="QPushButton" name="btnFetch">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -112,11 +101,11 @@
           <string>Fetch</string>
          </property>
          <property name="shortcut">
-          <string>Return</string>
+          <string notr="true">Return</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
         <spacer name="horizontalSpacer_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -129,29 +118,62 @@
          </property>
         </spacer>
        </item>
-       <item row="2" column="1">
-        <widget class="QCheckBox" name="checkJd">
-         <property name="font">
-          <font>
-           <family>Linux Libertine Display O</family>
-           <italic>true</italic>
-          </font>
+       <item row="2" column="2">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
-         <property name="styleSheet">
-          <string notr="true">QCheckBox
-{
-        spacing: 5px;
-        color: black;
-}
-QCheckBox::indicator 
-{
-        width: 17px;
-        height: 17px;
-}</string>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
          </property>
-         <property name="text">
-          <string>Just Donwload</string>
+        </spacer>
+       </item>
+       <item row="0" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="1">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Image URL</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelImageUrl">
+            <property name="text">
+             <string>No URL...</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -290,7 +312,7 @@ background-color: rgba(80, 255, 118, 15);</string>
             <string>Open image</string>
            </property>
            <property name="shortcut">
-            <string>Ctrl+O</string>
+            <string notr="true">Ctrl+O</string>
            </property>
           </widget>
          </item>
@@ -315,7 +337,7 @@ background-color: rgba(80, 255, 118, 15);</string>
             <string>Open in folder</string>
            </property>
            <property name="shortcut">
-            <string>Ctrl+O</string>
+            <string notr="true">Ctrl+O</string>
            </property>
           </widget>
          </item>
@@ -493,6 +515,7 @@ QProgressBar::chunk
      <string>Settings</string>
     </property>
     <addaction name="actionDesktop_Environment"/>
+    <addaction name="actionLanguage"/>
    </widget>
    <addaction name="menuSettings"/>
    <addaction name="menuAbout"/>
@@ -514,6 +537,11 @@ QProgressBar::chunk
   <action name="actionDesktop_Environment">
    <property name="text">
     <string>Desktop Environment</string>
+   </property>
+  </action>
+  <action name="actionLanguage">
+   <property name="text">
+    <string>Language</string>
    </property>
   </action>
  </widget>

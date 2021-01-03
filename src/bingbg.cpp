@@ -24,6 +24,7 @@ BingBG::BingBG(QWidget *parent)
     connect(ui -> actionAbout, SIGNAL(triggered()), this, SLOT(openAbout()));
     connect(ui -> actionAuthor, SIGNAL(triggered()), this, SLOT(openAuthor()));
     connect(ui -> actionDesktop_Environment, SIGNAL(triggered()), this, SLOT(openDE()));
+    connect(ui -> actionLanguage, SIGNAL(triggered()), this, SLOT(openLANG()));
     initDownload();
 }
 
@@ -34,30 +35,38 @@ BingBG::~BingBG()
 
 void BingBG::writeState()
 {
-    QSettings settings("Theodore Cooper", "Bingbg");
+    QSettings state("Theodore Cooper", "Bingbg");
 
-    settings.beginGroup("MainWindow");
-    settings.setValue("size", size());
-    settings.setValue("pos", pos());
-    settings.setValue("JDCheck", ui->checkJd->isChecked());
-    settings.endGroup();
+    state.beginGroup("MainWindow");
+    state.setValue("size", size());
+    state.setValue("pos", pos());
+    state.setValue("JDCheck", ui->checkJd->isChecked());
+    state.endGroup();
 }
 
 void BingBG::readState()
 {
-    QSettings settings("Theodore Cooper", "Bingbg");
+    QSettings state("Theodore Cooper", "Bingbg");
 
-    settings.beginGroup("MainWindow");
-    resize(settings.value("size", QSize(400, 400)).toSize());
-    move(settings.value("pos", QPoint(200,200)).toPoint());
-    ui->checkJd->setChecked(settings.value("JDCheck").toBool());
-    settings.endGroup();
+    state.beginGroup("MainWindow");
+    resize(state.value("size", QSize(400, 400)).toSize());
+    move(state.value("pos", QPoint(200,200)).toPoint());
+    ui->checkJd->setChecked(state.value("JDCheck").toBool());
+    state.endGroup();
+
+    char *time = geTime();
+    char *user = getlogin();
+    QString qtime(time);
+    QString quser(user);
+    QString qconfPath = "/home/" + quser + "/.bingbg/qt-config.ini";
+    QSettings settings(qconfPath, QSettings::IniFormat);
+    loadLanguage(settings.value("Language/default").toInt());
 }
 
 void BingBG::on_btnExit_clicked()
 {
     qDebug()<<"clicked Exit"<<endl;
-    if (!(QMessageBox::warning(this,tr("exit tip"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
+    if (!(QMessageBox::warning(this,tr("Exit?"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
     {
         writeState();
         exit(0);
@@ -67,7 +76,7 @@ void BingBG::on_btnExit_clicked()
 
 void BingBG::closeEvent(QCloseEvent *event)
 {
-    if (!(QMessageBox::warning(this,tr("exit tip"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
+    if (!(QMessageBox::warning(this,tr("Exit?"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
     {
         writeState();
         event -> accept();
@@ -120,6 +129,13 @@ void BingBG::openDE()
     qDebug()<<"open Settings"<<endl;
     p_OpenDE = new DE;
     p_OpenDE -> show();
+}
+
+void BingBG::openLANG()
+{
+    qDebug()<<"open lang"<<endl;
+    p_OpenLANG = new LANG;
+    p_OpenLANG -> show();
 }
 
 void BingBG::initDownload()
@@ -208,7 +224,7 @@ void BingBG::core_downloadImg(QString URL, QString PATH)
     connect(reply, &QNetworkReply::finished, this, &BingBG::doProcessFinished);
     connect(reply, &QNetworkReply::finished, this, &BingBG::showImg);
     connect(reply, &QNetworkReply::finished, this, &BingBG::enableBtn);
-    if(ui->checkJd->isChecked() == 0)
+    if(ui->checkJd->isChecked() == 1)
     {
         connect(reply, &QNetworkReply::finished, this, &BingBG::setBG);
     }
@@ -242,17 +258,16 @@ void BingBG::downloadImg()
 {
     char *time = geTime();
     char *user = getlogin();
-    char *imgUrl_full = parseXml(time, user);
-    if(imgUrl_full == NULL)
+    QString qimgUrl_full = parseXml(time, user);
+    if(qimgUrl_full == NULL)
     {
         qDebug()<<"<Failed to parse xml>"<<endl;
     }
     else
     {
-        qDebug()<<imgUrl_full<<endl;
+        qDebug()<<qimgUrl_full<<endl;
         QString qtime(time);
         QString quser(user);
-        QString qimgUrl_full(imgUrl_full);
         QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
         QString imgPath = folderPath + "/Wallpaper.jpg";
         core_downloadImg(qimgUrl_full, imgPath);

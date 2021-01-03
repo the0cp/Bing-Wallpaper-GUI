@@ -1,8 +1,10 @@
+﻿#include "include/bingbg.h"
 #include "include/proc.h"
+#include "ui_bingbg.h"
 
-char *parseXml(char *TIME_PX, char *USRNAME)
+QString BingBG::parseXml(char *TIME_PX, char *USRNAME)
 {
-	char *img_url;
+    char *img_url;
     xmlChar *urlPart;
   	char *xmlName;
   	asprintf(&xmlName, "%s%s%s%s%s", "/home/", USRNAME, "/BBG-Download/", TIME_PX, "/index.xml");
@@ -52,6 +54,8 @@ char *parseXml(char *TIME_PX, char *USRNAME)
   	xmlCleanupParser();
   	xmlMemoryDump();
     qDebug()<<"<Parse Done!!!>"<<endl;
-	return img_url;
+    QString q_imgUrl(img_url);
+    ui -> labelImageUrl -> setText(q_imgUrl);
+    return q_imgUrl;
 	
 }

@@ -20,6 +20,8 @@ SOURCES += \
     src/author.cpp \
     src/about.cpp \
     src/geTime.cpp \
+    src/lang.cpp \
+    src/loadLanguage.cpp \
     src/main.cpp \
     src/bingbg.cpp \
     src/makeDir.cpp \
@@ -31,19 +33,23 @@ HEADERS += \
     include/author.h \
     include/about.h \
     include/bingbg.h \
-    include/proc.h
+    include/proc.h \
+    include/lang.h
 
 FORMS += \
     form/de.ui \
-    form/exitconfirmation.ui \
     form/author.ui \
     form/about.ui \
-    form/bingbg.ui
+    form/bingbg.ui \
+    form/lang.ui
 
 TRANSLATIONS += \
     lang/lang_en_US.ts \
-    lang/lang_zh_CN.ts \
-    lang/lang_fr_FR.ts
+    lang/lang_fr_FR.ts \
+    lang/lang_fr_CA.ts \
+    lang/lang_ge_GE.ts \
+    lang/lang_zh_TW.ts \
+    lang/lang_zh_CN.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

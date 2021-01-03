@@ -8,12 +8,14 @@
 #include <QDesktopServices>
 #include <QMainWindow>
 #include <QCloseEvent>
+#include <QTranslator>
 #include <QSettings>
 #include <QMessageBox>
 #include <QAbstractButton>
 #include "include/about.h"
 #include "include/author.h"
 #include "include/de.h"
+#include "include/lang.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class BingBG; }
@@ -58,9 +60,14 @@ public:
 
     void setBG();
 
+    void loadLanguage(int LANGINDEX);
+
+    QString parseXml(char *TIME_PX, char *USRNAME);
+
     About *p_OpenAbout;
     Author *p_OpenAuthor;
     DE *p_OpenDE;
+    LANG *p_OpenLANG;
     QNetworkAccessManager *manager;
     QNetworkReply *reply;
     QFile *files;
@@ -75,6 +82,8 @@ private slots:
     void openAuthor();
 
     void openDE();
+
+    void openLANG();
 
     void on_btnFetch_clicked();
 

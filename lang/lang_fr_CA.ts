@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.1" language="fr_CA">
 <context>
     <name>About</name>
     <message>
@@ -20,16 +20,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 1.1 Beta&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Copyright 2020 Theodore Cooper. All rights reserved.&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#xa0;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;About&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;h3 style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;write&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:large; font-weight:600;&quot;&gt;B&lt;/span&gt;&lt;span style=&quot; font-size:large; font-weight:600;&quot;&gt;ing Backgrounds Getter(Qt)&lt;/span&gt;&lt;/h3&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sur la base de QT 4.12.2 (GCC version 9.3.0 (Debian 9.3.0-15), 64 bit)&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Built on &lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 1.1 Beta&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Droit d’auteur 2020 Theodore Cooper. Tous les droits réservés.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -47,12 +38,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Theodore Cooper&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2020 All Rights Served.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Theodore Cooper&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2020 Tous droits servis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -66,7 +52,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="45"/>
         <source>Get Wallpaper</source>
-        <translation>Obtenez fond d’écran</translation>
+        <translation>Obtenez du papier peint</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="69"/>
@@ -76,7 +62,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="101"/>
         <source>Fetch</source>
-        <translation>Chercher</translation>
+        <translation>Aller chercher</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="163"/>
@@ -91,7 +77,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="203"/>
         <source>Exit</source>
-        <translation>Sortie</translation>
+        <translation>Sortie de l’entrée</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="206"/>
@@ -102,7 +88,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="227"/>
         <source>View</source>
-        <translation>Vue</translation>
+        <translation>Voir l’affichage</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="256"/>
@@ -117,12 +103,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="337"/>
         <source>Open in folder</source>
-        <translation>Dossier ouvert</translation>
+        <translation>Ouvrir dans le dossier</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="379"/>
         <source>Progress</source>
-        <translation>Progrès</translation>
+        <translation>progrès</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="445"/>
@@ -134,7 +120,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../form/bingbg.ui" line="526"/>
         <source>About</source>
         <extracomment>About</extracomment>
-        <translation>Sur</translation>
+        <translatorcomment>À propos de</translatorcomment>
+        <translation>À propos de</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="515"/>
@@ -149,7 +136,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="534"/>
         <source>Author</source>
-        <translation>Auteur</translation>
+        <translation>auteur</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="539"/>
@@ -164,8 +151,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/bingbg.cpp" line="69"/>
         <location filename="../src/bingbg.cpp" line="79"/>
+        <source>Exit?</source>
+        <translation>Tu quittes ?</translation>
+    </message>
+    <message>
+        <location filename="../src/bingbg.cpp" line="69"/>
+        <location filename="../src/bingbg.cpp" line="79"/>
         <source>Do you really want to quit Bing Backgrounds Getter?</source>
-        <translation>Voulez-vous vraiment quitter Bing Backgrounds Getter?</translation>
+        <translation>Voulez-vous vraiment quitter Bing Backgrounds Getter ?</translation>
     </message>
     <message>
         <location filename="../src/bingbg.cpp" line="69"/>
@@ -178,12 +171,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/bingbg.cpp" line="79"/>
         <source>No</source>
         <translation>Non</translation>
-    </message>
-    <message>
-        <location filename="../src/bingbg.cpp" line="69"/>
-        <location filename="../src/bingbg.cpp" line="79"/>
-        <source>Exit?</source>
-        <translation>Sortie?</translation>
     </message>
 </context>
 <context>
@@ -204,7 +191,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/lang.ui" line="36"/>
         <source>Change Language</source>
-        <translation>Changer la langue</translation>
+        <translation>Changer de langue</translation>
     </message>
     <message>
         <location filename="../form/lang.ui" line="57"/>
