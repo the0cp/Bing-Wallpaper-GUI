@@ -44,35 +44,25 @@
       <property name="title">
        <string>Get Wallpaper</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2" rowstretch="348,200,0,0,3" columnstretch="3,0,0">
-       <item row="3" column="1">
-        <widget class="QCheckBox" name="checkJd">
-         <property name="font">
-          <font>
-           <family>Linux Libertine Display O</family>
-           <italic>true</italic>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QCheckBox
-{
-        spacing: 5px;
-        color: black;
-}
-QCheckBox::indicator 
-{
-        width: 17px;
-        height: 17px;
-}</string>
-         </property>
-         <property name="text">
-          <string>Set as Background</string>
-         </property>
-         <property name="shortcut">
-          <string notr="true"/>
-         </property>
-        </widget>
-       </item>
+      <layout class="QGridLayout" name="gridLayout_2" rowstretch="348,100,20,10,3" columnstretch="12,100,12">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="horizontalSpacing">
+        <number>0</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>3</number>
+       </property>
        <item row="2" column="1">
         <widget class="QPushButton" name="btnFetch">
          <property name="sizePolicy">
@@ -105,15 +95,72 @@ QCheckBox::indicator
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <spacer name="horizontalSpacer_2">
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Image URL</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelImageUrl">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
+            <property name="lineWidth">
+             <number>10</number>
+            </property>
+            <property name="text">
+             <string>No URL...</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::AutoText</enum>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <spacer name="verticalSpacer_2">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>40</width>
-           <height>20</height>
+           <width>20</width>
+           <height>40</height>
           </size>
          </property>
         </spacer>
@@ -144,37 +191,46 @@ QCheckBox::indicator
          </property>
         </spacer>
        </item>
-       <item row="4" column="1">
-        <spacer name="verticalSpacer_2">
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="checkJd">
+         <property name="font">
+          <font>
+           <family>Linux Libertine Display O</family>
+           <italic>true</italic>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox
+{
+        spacing: 5px;
+        color: black;
+}
+QCheckBox::indicator 
+{
+        width: 17px;
+        height: 17px;
+}</string>
+         </property>
+         <property name="text">
+          <string>Set as Background</string>
+         </property>
+         <property name="shortcut">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <spacer name="horizontalSpacer_6">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
-           <height>40</height>
+           <width>40</width>
+           <height>20</height>
           </size>
          </property>
         </spacer>
-       </item>
-       <item row="1" column="1">
-        <widget class="QGroupBox" name="groupBox_4">
-         <property name="title">
-          <string>Image URL</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="0" column="0">
-           <widget class="QLabel" name="labelImageUrl">
-            <property name="text">
-             <string>No URL...</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
        </item>
       </layout>
      </widget>

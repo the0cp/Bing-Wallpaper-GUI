@@ -94,14 +94,14 @@
           <item>
            <widget class="QRadioButton" name="rbtn_gege">
             <property name="text">
-             <string>German</string>
+             <string>Deutsch</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QRadioButton" name="rbtn_ruru">
             <property name="text">
-             <string>Russian</string>
+             <string>русский</string>
             </property>
            </widget>
           </item>

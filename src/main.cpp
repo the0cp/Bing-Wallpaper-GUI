@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         QString quser(user);
         QString qconfPath = "/home/" + quser + "/.bingbg/qt-config.ini";
         QSettings settings(qconfPath, QSettings::IniFormat);
-        settings.setValue("DesktopEnvironment/default", "NULL");
+        settings.setValue("DesktopEnvironment/default", -1);
     }
     BingBG w;
     w.show();

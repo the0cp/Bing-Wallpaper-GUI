@@ -16,9 +16,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/de.cpp \
     src/author.cpp \
     src/about.cpp \
+    src/de.cpp \
     src/geTime.cpp \
     src/lang.cpp \
     src/loadLanguage.cpp \
@@ -26,22 +26,24 @@ SOURCES += \
     src/bingbg.cpp \
     src/makeDir.cpp \
     src/parseXml.cpp \
+    src/setbg.cpp
 
 
 HEADERS += \
-    include/de.h \
     include/author.h \
     include/about.h \
     include/bingbg.h \
     include/proc.h \
-    include/lang.h
+    include/lang.h \
+    include/setbg.h \
+    include/de.h
 
 FORMS += \
-    form/de.ui \
     form/author.ui \
     form/about.ui \
     form/bingbg.ui \
-    form/lang.ui
+    form/lang.ui \
+    form/de.ui
 
 TRANSLATIONS += \
     lang/lang_en_US.ts \

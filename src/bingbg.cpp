@@ -1,6 +1,7 @@
 ﻿#include "include/bingbg.h"
-#include "ui_bingbg.h"
 #include "include/proc.h"
+#include "include/setbg.h"
+#include "ui_bingbg.h"
 
 BingBG::BingBG(QWidget *parent)
     : QMainWindow(parent)
@@ -126,14 +127,14 @@ void BingBG::openAuthor()
 
 void BingBG::openDE()
 {
-    qDebug()<<"open Settings"<<endl;
+    qDebug()<<"open de_Selector"<<endl;
     p_OpenDE = new DE;
     p_OpenDE -> show();
 }
 
 void BingBG::openLANG()
 {
-    qDebug()<<"open lang"<<endl;
+    qDebug()<<"open lang_Selector"<<endl;
     p_OpenLANG = new LANG;
     p_OpenLANG -> show();
 }
@@ -277,6 +278,25 @@ void BingBG::downloadImg()
 void BingBG::setBG()
 {
     qDebug()<<"set backgrounds!!!"<<endl;
+    char *time = geTime();
+    char *user = getlogin();
+    QString qtime(time);
+    QString quser(user);
+    QString qconfPath = "/home/" + quser + "/.bingbg/qt-config.ini";
+    QSettings settings(qconfPath, QSettings::IniFormat);
+    switch (settings.value("DesktopEnvironment/default").toInt())
+    {
+        case -1:
+            BingBG::openDE();
+        case 0:
+            setBG::setBG_MATE(time, user);
+        case 1:
+            setBG::setBG_XFCE(time, user);
+        case 2:
+            setBG::setBG_GNOME(time, user);
+        case 3:
+            setBG::setBG_CINNAMON(time, user);
+    }
 }
 
 void BingBG::on_btnFetch_clicked()

@@ -1,13 +1,20 @@
-﻿#ifndef SETTINGS_H
-#define SETTINGS_H
+﻿#ifndef DE_H
+#define DE_H
 
-#include <QWidget>
+#include <QDialog>
+#include <QDebug>
+#include <QAbstractButton>
+#include <QPushButton>
+#include <QButtonGroup>
+#include <QSettings>
+#include <QCloseEvent>
+#include <QMessageBox>
 
 namespace Ui {
 class DE;
 }
 
-class DE : public QWidget
+class DE : public QDialog
 {
     Q_OBJECT
 
@@ -15,8 +22,14 @@ public:
     explicit DE(QWidget *parent = nullptr);
     ~DE();
 
+    void checkDE();
+
+private slots:
+    void on_buttonBox_clicked(QAbstractButton *button);
+
 private:
     Ui::DE *ui;
+    QButtonGroup *groupButton;
 };
 
-#endif // SETTINGS_H
+#endif // DE_H
