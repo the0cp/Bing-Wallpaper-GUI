@@ -17,7 +17,6 @@ QString BingBG::parseXml(char *TIME_PX, char *USRNAME)
 
   	if (pdoc == NULL)
   	{
-        qDebug()<<"ERROR:cannot open xml!!!"<<endl;
         return NULL;
   	}
 
@@ -25,7 +24,6 @@ QString BingBG::parseXml(char *TIME_PX, char *USRNAME)
 
   	if(proot == NULL)
   	{
-        qDebug()<<"ERROR: Xml is empty!!!"<<endl;
         return NULL;
     }
 
@@ -53,7 +51,6 @@ QString BingBG::parseXml(char *TIME_PX, char *USRNAME)
   	xmlFreeDoc(pdoc);
   	xmlCleanupParser();
   	xmlMemoryDump();
-    qDebug()<<"<Parse Done!!!>"<<endl;
     QString q_imgUrl(img_url);
     ui -> labelImageUrl -> setText(q_imgUrl);
     return q_imgUrl;

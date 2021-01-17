@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Bing Backgrounds Getter</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../res/resources.qrc">
+    <normaloff>:/Bingbg-icon.png</normaloff>:/Bingbg-icon.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout" rowstretch="381,79,27" columnstretch="181,481">
     <item row="0" column="0">
@@ -601,6 +605,8 @@ QProgressBar::chunk
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../res/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

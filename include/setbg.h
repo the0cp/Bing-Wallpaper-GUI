@@ -1,6 +1,11 @@
 ﻿#ifndef SETBG_H
 #define SETBG_H
 
+#include <QMessageBox>
+#include <QCloseEvent>
+#include <QTranslator>
+#include <QAbstractButton>
+#include "include/bingbg.h"
 
 class setBG
 {

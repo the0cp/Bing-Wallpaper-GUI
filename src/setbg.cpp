@@ -16,8 +16,7 @@ void setBG::setBG_MATE(char *TIME, char *USRNAME)
     status = system(mate_com);
     if(status == -1)
     {
-        qDebug()<<"Cannot set background!!!(systen error...)"<<endl;
-        exit(1);
+        printf("error");
     }
     else
     {
@@ -25,18 +24,16 @@ void setBG::setBG_MATE(char *TIME, char *USRNAME)
         {
             if(WEXITSTATUS(status) == 0)
             {
-                qDebug()<<"Successfully!!!"<<endl;
+                printf("done");
             }
             else
             {
-                qDebug()<<"Cannot set background!!!run error:"<<endl;
-                qDebug()<<WEXITSTATUS(status)<<endl;
+                printf("error");
             }
         }
         else
         {
-            qDebug()<<"exit code"<<endl;
-            qDebug()<<WEXITSTATUS(status)<<endl;
+            printf("error");
         }
     }
     free(mate_com);
@@ -53,8 +50,7 @@ void setBG::setBG_GNOME(char *TIME, char *USRNAME)
     status = system(gnome_com);
     if(status == -1)
     {
-        qDebug()<<"Cannot set background!!!(systen error...)"<<endl;
-        exit(1);
+        printf("error");
     }
     else
     {
@@ -62,18 +58,16 @@ void setBG::setBG_GNOME(char *TIME, char *USRNAME)
         {
             if(WEXITSTATUS(status) == 0)
             {
-                qDebug()<<"Successfully!!!"<<endl;
+                printf("done");
             }
             else
             {
-                qDebug()<<"Cannot set background!!!run error:"<<endl;
-                qDebug()<<WEXITSTATUS(status)<<endl;
+                printf("error");
             }
         }
         else
         {
-            qDebug()<<"exit code"<<endl;
-            qDebug()<<WEXITSTATUS(status)<<endl;
+            printf("error");
         }
     }
     free(gnome_com);
@@ -90,8 +84,7 @@ void setBG::setBG_XFCE(char *TIME, char *USRNAME)
     status = system(xfce_com);
     if(status == -1)
     {
-        qDebug()<<"Cannot set background!!!(systen error...)"<<endl;
-        exit(1);
+        printf("error");
     }
     else
     {
@@ -99,18 +92,16 @@ void setBG::setBG_XFCE(char *TIME, char *USRNAME)
         {
             if(WEXITSTATUS(status) == 0)
             {
-                qDebug()<<"Successfully!!!"<<endl;
+                printf("done");
             }
             else
             {
-                qDebug()<<"Cannot set background!!!run error:"<<endl;
-                qDebug()<<WEXITSTATUS(status)<<endl;
+                printf("error");
             }
         }
         else
         {
-            qDebug()<<"exit code"<<endl;
-            qDebug()<<WEXITSTATUS(status)<<endl;
+            printf("error");
         }
     }
     free(xfce_com);
@@ -127,8 +118,7 @@ void setBG::setBG_CINNAMON(char *TIME, char *USRNAME)
     status = system(cinn_com);
     if(status == -1)
     {
-        qDebug()<<"Cannot set background!!!(systen error...)"<<endl;
-        exit(1);
+        printf("error");
     }
     else
     {
@@ -136,18 +126,16 @@ void setBG::setBG_CINNAMON(char *TIME, char *USRNAME)
         {
             if(WEXITSTATUS(status) == 0)
             {
-                qDebug()<<"Successfully!!!"<<endl;
+                printf("done");
             }
             else
             {
-                qDebug()<<"Cannot set background!!!run error:"<<endl;
-                qDebug()<<WEXITSTATUS(status)<<endl;
+                printf("error");
             }
         }
         else
         {
-            qDebug()<<"exit code"<<endl;
-            qDebug()<<WEXITSTATUS(status)<<endl;
+            printf("error");
         }
     }
     free(cinn_com);

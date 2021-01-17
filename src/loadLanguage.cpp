@@ -6,7 +6,6 @@ void BingBG::loadLanguage(int LANGINDEX)
     QString qmFilename;
     QTranslator *translator = new QTranslator;
     QString runPath = QCoreApplication::applicationDirPath();
-    qDebug()<<runPath<<endl;
     if(LANGINDEX == 0)
     {
         qmFilename = runPath + "/translations/lang_en_US.qm";

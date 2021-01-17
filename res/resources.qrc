@@ -1,1 +1,14 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/">
+        <file>qtrc-twitter.png</file>
+        <file>qtrc-linux.png</file>
+        <file>qtrc-landscape.png</file>
+        <file>qtrc-gmail.png</file>
+        <file>qtrc-github.png</file>
+        <file>qtrc-bing.png</file>
+        <file>Bingbg.png</file>
+        <file>theodore.png</file>
+        <file>Bingbg-icon.png</file>
+        <file>theodore-icon.png</file>
+    </qresource>
+</RCC>

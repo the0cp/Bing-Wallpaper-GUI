@@ -13,7 +13,6 @@ BingBG::BingBG(QWidget *parent)
     char *time = geTime();
     char *user = getlogin();
     asprintf(&imgPath, "%s%s%s%s%s", "/home/", user, "/BBG-Download/", time, "/Wallpaper.jpg");
-    qDebug()<<imgPath<<endl;
     if(access(imgPath, 0) == 0)
     {
         showImg();
@@ -66,7 +65,6 @@ void BingBG::readState()
 
 void BingBG::on_btnExit_clicked()
 {
-    qDebug()<<"clicked Exit"<<endl;
     if (!(QMessageBox::warning(this,tr("Exit?"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
     {
         writeState();
@@ -96,7 +94,6 @@ void BingBG::on_btnOpenfolder_clicked()
     QString quser(user);
     QString folderPath = "file:/home/" + quser + "/BBG-Download/" + qtime;
     //QString imgPath = folderPath + "/Wallpaper.jpg";
-    qDebug()<<"open file in file explorer"<<endl;
     QDesktopServices::openUrl(QUrl(folderPath, QUrl::TolerantMode));
 }
 
@@ -107,34 +104,29 @@ void BingBG::on_btnOpenimg_clicked()
     QString qtime(time);
     QString quser(user);
     QString folderPath = "file:/home/" + quser + "/BBG-Download/" + qtime + "/Wallpaper.jpg";
-    qDebug()<<"open file in image viewer"<<endl;
     QDesktopServices::openUrl(QUrl(folderPath, QUrl::TolerantMode));
 }
 
 void BingBG::openAbout()
 {
-    qDebug()<<"open About"<<endl;
     p_OpenAbout = new About;
     p_OpenAbout -> show();
 }
 
 void BingBG::openAuthor()
 {
-    qDebug()<<"open Author"<<endl;
     p_OpenAuthor = new Author;
     p_OpenAuthor -> show();
 }
 
 void BingBG::openDE()
 {
-    qDebug()<<"open de_Selector"<<endl;
     p_OpenDE = new DE;
     p_OpenDE -> show();
 }
 
 void BingBG::openLANG()
 {
-    qDebug()<<"open lang_Selector"<<endl;
     p_OpenLANG = new LANG;
     p_OpenLANG -> show();
 }
@@ -186,7 +178,8 @@ void BingBG::doProcessDownloadProgress(qint64 recv_total, qint64 all_total)
 
 void BingBG::doProcessError(QNetworkReply::NetworkError code)
 {
-    qDebug() << code;
+    QString error_code(code);
+    ui->labelCurrent->setText(error_code);
 }
 
 void BingBG::core_downloadXml(QString URL, QString PATH)
@@ -262,11 +255,10 @@ void BingBG::downloadImg()
     QString qimgUrl_full = parseXml(time, user);
     if(qimgUrl_full == NULL)
     {
-        qDebug()<<"<Failed to parse xml>"<<endl;
+        ui->labelCurrent->setText("Failed to parse Xml!!!");
     }
     else
     {
-        qDebug()<<qimgUrl_full<<endl;
         QString qtime(time);
         QString quser(user);
         QString folderPath = "/home/" + quser + "/BBG-Download/" + qtime;
@@ -277,7 +269,6 @@ void BingBG::downloadImg()
 
 void BingBG::setBG()
 {
-    qDebug()<<"set backgrounds!!!"<<endl;
     char *time = geTime();
     char *user = getlogin();
     QString qtime(time);
@@ -302,12 +293,9 @@ void BingBG::setBG()
 void BingBG::on_btnFetch_clicked()
 {
     ui->labelCurrent->setText("init...");
-    qDebug()<<"Start"<<endl;
     ui -> btnFetch -> setDisabled(true);
     char *time = geTime();
     char *user = getlogin();
-    qDebug()<<time<<endl;
-    qDebug()<<user<<endl;
     ui->labelCurrent->setText("making folders...");
     makeDir(time, user);
     QString qtime(time);
@@ -315,7 +303,5 @@ void BingBG::on_btnFetch_clicked()
     QString confPath = "/home/" + quser + "/.bingbg/" + "qt-config.xml";
     ui->labelImg->setText("...");
     downloadXml();
-
-    //ui -> btnFetch -> setDisabled(false);
 }
 

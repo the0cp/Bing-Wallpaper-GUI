@@ -2,7 +2,6 @@
 #define DE_H
 
 #include <QDialog>
-#include <QDebug>
 #include <QAbstractButton>
 #include <QPushButton>
 #include <QButtonGroup>

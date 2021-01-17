@@ -69,12 +69,10 @@ void LANG::on_buttonBox_clicked(QAbstractButton *button)
 
     if(ui->buttonBox->button(QDialogButtonBox::Ok)  == button)
     {
-        qDebug()<<"set lang"<<endl;
         checkLang();
     }
     else
     {
-        qDebug()<<"reject lang"<<endl;
         reject();
     }
 }

@@ -58,12 +58,10 @@ void DE::on_buttonBox_clicked(QAbstractButton *button)
 {
     if(ui->buttonBox->button(QDialogButtonBox::Ok)  == button)
     {
-        qDebug()<<"set de"<<endl;
         checkDE();
     }
     else
     {
-        qDebug()<<"reject de"<<endl;
         reject();
     }
 }

@@ -2,7 +2,6 @@
 #include "ui_bingbg.h"
 #include "include/proc.h"
 #include <QApplication>
-#include <QDebug>
 
 int main(int argc, char *argv[])
 {

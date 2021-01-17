@@ -16,8 +16,6 @@
 #include <libxml/tree.h>
 #include <libxml/parser.h>
 
-#include <QDebug>
-
 extern char *geTime();
 extern char *readConf();
 extern void makeDir(char *TIME_MD, char *USRNAME);
