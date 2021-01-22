@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/proxy.cpp \
     src/author.cpp \
     src/about.cpp \
     src/de.cpp \
@@ -36,14 +37,16 @@ HEADERS += \
     include/proc.h \
     include/lang.h \
     include/setbg.h \
-    include/de.h
+    include/de.h \
+    include/proxy.h
 
 FORMS += \
     form/author.ui \
     form/about.ui \
     form/bingbg.ui \
     form/lang.ui \
-    form/de.ui
+    form/de.ui \
+    form/proxy.ui
 
 TRANSLATIONS += \
     lang/lang_en_US.ts \

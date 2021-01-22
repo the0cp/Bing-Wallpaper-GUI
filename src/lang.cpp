@@ -38,7 +38,7 @@ void LANG::checkLang()
     QString quser(user);
     QString qconfPath = "/home/" + quser + "/.bingbg/qt-config.ini";
     QSettings settings(qconfPath, QSettings::IniFormat);
-    switch(groupButton->checkedId())
+    switch(groupButton -> checkedId())
     {
         case 0:
             settings.setValue("Language/default", 0);
@@ -66,7 +66,6 @@ void LANG::checkLang()
 
 void LANG::on_buttonBox_clicked(QAbstractButton *button)
 {
-
     if(ui->buttonBox->button(QDialogButtonBox::Ok)  == button)
     {
         checkLang();

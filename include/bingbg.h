@@ -16,6 +16,7 @@
 #include "include/author.h"
 #include "include/de.h"
 #include "include/lang.h"
+#include "include/proxy.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class BingBG; }
@@ -68,6 +69,7 @@ public:
     Author *p_OpenAuthor;
     DE *p_OpenDE;
     LANG *p_OpenLANG;
+    Proxy *p_OpenProxy;
     QNetworkAccessManager *manager;
     QNetworkReply *reply;
     QFile *files;
@@ -84,6 +86,8 @@ private slots:
     void openDE();
 
     void openLANG();
+
+    void openProxy();
 
     void on_btnFetch_clicked();
 

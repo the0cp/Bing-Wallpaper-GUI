@@ -575,6 +575,7 @@ QProgressBar::chunk
      <string>Settings</string>
     </property>
     <addaction name="actionDesktop_Environment"/>
+    <addaction name="actionProxy"/>
     <addaction name="actionLanguage"/>
    </widget>
    <addaction name="menuSettings"/>
@@ -602,6 +603,11 @@ QProgressBar::chunk
   <action name="actionLanguage">
    <property name="text">
     <string>Language</string>
+   </property>
+  </action>
+  <action name="actionProxy">
+   <property name="text">
+    <string>Proxy</string>
    </property>
   </action>
  </widget>

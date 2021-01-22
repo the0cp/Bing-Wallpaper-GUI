@@ -25,6 +25,7 @@ BingBG::BingBG(QWidget *parent)
     connect(ui -> actionAuthor, SIGNAL(triggered()), this, SLOT(openAuthor()));
     connect(ui -> actionDesktop_Environment, SIGNAL(triggered()), this, SLOT(openDE()));
     connect(ui -> actionLanguage, SIGNAL(triggered()), this, SLOT(openLANG()));
+    connect(ui -> actionProxy, SIGNAL(triggered()), this, SLOT(openProxy()));
     initDownload();
 }
 
@@ -131,6 +132,12 @@ void BingBG::openLANG()
     p_OpenLANG -> show();
 }
 
+void BingBG::openProxy()
+{
+    p_OpenProxy = new Proxy;
+    p_OpenProxy -> show();
+}
+
 void BingBG::initDownload()
 {
     manager = new QNetworkAccessManager(this);
@@ -162,13 +169,21 @@ void BingBG::showImg()
 {
     char *time = geTime();
     char *user = getlogin();
+
     QString qtime(time);
     QString quser(user);
+
     QString imgPath = "/home/" + quser + "/BBG-Download/" + qtime + "/Wallpaper.jpg";
     QImage *img = new QImage;
-    img->load(imgPath);
+    if(img->load(imgPath) == 1)
+    {
+        ui->labelImg->setPixmap(QPixmap::fromImage(*img));
+    }
 
-    ui->labelImg->setPixmap(QPixmap::fromImage(*img));}
+    //ui->labelImg->setPixmap(QPixmap::fromImage(*img));
+}
+
+
 
 void BingBG::doProcessDownloadProgress(qint64 recv_total, qint64 all_total)
 {
