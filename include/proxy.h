@@ -9,6 +9,7 @@
 #include <QButtonGroup>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QSettings>
 
 namespace Ui {
 class Proxy;
@@ -24,8 +25,18 @@ public:
 
     void setProxy();
 
+    void writeState();
+
+    void readState();
+
 private slots:
     void on_buttonBox_clicked(QAbstractButton *button);
+
+    void on_rbtn_manual_clicked(bool checked);
+
+    void on_rbtn_sys_clicked(bool checked);
+
+    void on_rbtn_noproxy_clicked(bool checked);
 
 private:
     Ui::Proxy *ui;

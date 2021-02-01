@@ -2,9 +2,9 @@
 
 Based on QT 4.12.2 (GCC version 9.3.0 (Debian 9.3.0-15), 64 bit)
 
-Built on Linux Debian
+Built on Kernel Linux 5.7.0-2 x86_64
 
-*Version 1.1.2-beta*
+Version 1.0
 
 Copyright 2020 Theodore Cooper. All rights reserved.
 

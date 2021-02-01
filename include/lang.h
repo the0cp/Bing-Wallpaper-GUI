@@ -23,6 +23,10 @@ public:
 
     void checkLang();
 
+    void writeState();
+
+    void readState();
+
 private slots:
     void on_buttonBox_clicked(QAbstractButton *button);
 

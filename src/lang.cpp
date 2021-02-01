@@ -22,12 +22,37 @@ LANG::LANG(QWidget *parent) :
     groupButton -> addButton(ui -> rbtn_zhcn, 5);
     groupButton -> addButton(ui -> rbtn_zhtw, 6);
 
-    groupButton->button(settings.value("Language/default").toInt())->setChecked(1);
+    readState();
 }
 
 LANG::~LANG()
 {
     delete ui;
+}
+
+void LANG::writeState()
+{
+    QSettings state("Theodore Cooper", "Bingbg");
+
+    state.beginGroup("LANG");
+    state.setValue("size", size());
+    state.setValue("pos", pos());
+    state.endGroup();
+}
+
+void LANG::readState()
+{
+    QSettings state("Theodore Cooper", "Bingbg");
+    char *user = getlogin();
+    QString quser(user);
+    QString qconfPath = "/home/" + quser + "/.bingbg/qt-config.ini";
+    QSettings settings(qconfPath, QSettings::IniFormat);
+
+    state.beginGroup("LANG");
+    resize(state.value("size", QSize(400, 400)).toSize());
+    move(state.value("pos", QPoint(200,200)).toPoint());
+    groupButton -> button(settings.value("Language/default").toInt())->setChecked(true);
+    state.endGroup();
 }
 
 void LANG::checkLang()
@@ -68,6 +93,7 @@ void LANG::on_buttonBox_clicked(QAbstractButton *button)
 {
     if(ui->buttonBox->button(QDialogButtonBox::Ok)  == button)
     {
+        writeState();
         checkLang();
     }
     else
