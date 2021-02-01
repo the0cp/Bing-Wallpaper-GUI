@@ -28,7 +28,6 @@ Proxy::Proxy(QWidget *parent) :
     {
         ui -> frame -> setEnabled(false);
     }
-    //connect(ui -> rbtn_manual, SIGNAL(clicked(bool)), this, SLOT(ui->frame->setEnabled(false)));
 }
 
 void Proxy::writeState()
@@ -92,7 +91,6 @@ void Proxy::on_buttonBox_clicked(QAbstractButton *button)
     {
         setProxy();
         writeState();
-        qDebug()<<"ddd"<<endl;
     }
     else
     {

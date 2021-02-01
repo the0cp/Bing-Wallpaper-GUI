@@ -54,7 +54,8 @@ TRANSLATIONS += \
     lang/lang_fr_CA.ts \
     lang/lang_ge_GE.ts \
     lang/lang_zh_TW.ts \
-    lang/lang_zh_CN.ts
+    lang/lang_zh_CN.ts \
+    lang/lang_ru_RU.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>About</name>
     <message>
@@ -36,49 +36,13 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/qtrc-linux.png&quot; width=&quot;80&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;About&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;h3 style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;write&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:large; font-weight:600;&quot;&gt;B&lt;/span&gt;&lt;span style=&quot; font-size:large; font-weight:600;&quot;&gt;ing Backgrounds Getter(Qt)&lt;/span&gt;&lt;/h3&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Based on QT 4.12.2 (GCC version 9.3.0 (Debian 9.3.0-15), 64 bit)&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Built on &lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 1.1 Beta&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Copyright 2020 Theodore Cooper. All rights reserved.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#xa0;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;About&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;h3 style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;write&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:large; font-weight:600;&quot;&gt;B&lt;/span&gt;&lt;span style=&quot; font-size:large; font-weight:600;&quot;&gt;ing Backgrounds Getter(Qt)&lt;/span&gt;&lt;/h3&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sur la base de QT 4.12.2 (GCC version 9.3.0 (Debian 9.3.0-15), 64 bit)&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Built on &lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 1.1 Beta&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Droit d’auteur 2020 Theodore Cooper. Tous les droits réservés.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
 </context>
 <context>
     <name>Author</name>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Theodore Cooper&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2020 All Rights Served.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Theodore Cooper&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2020 Tous droits servis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../form/author.ui" line="35"/>
         <source>Author</source>
-        <translation type="unfinished">Auteur</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../form/author.ui" line="60"/>
@@ -127,63 +91,63 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/bingbg.ui" line="49"/>
         <source>Get Wallpaper</source>
-        <translation>Obtenez fond d’écran</translation>
-    </message>
-    <message>
-        <location filename="../form/bingbg.ui" line="219"/>
-        <source>Set as Background</source>
-        <translation>Définir comme arrière-plan</translation>
+        <translation>Получить обои</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="95"/>
         <source>Fetch</source>
-        <translation>Chercher</translation>
+        <translation>Принести</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="111"/>
         <source>Image URL</source>
-        <translation>URL de l’image</translation>
+        <translation>URL-адрес изображения</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="140"/>
         <source>No URL...</source>
-        <translation>Pas d’URL...</translation>
+        <translation>Нет URL...</translation>
+    </message>
+    <message>
+        <location filename="../form/bingbg.ui" line="219"/>
+        <source>Set as Background</source>
+        <translation>Установить в качестве фона</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="263"/>
         <source>Exit</source>
-        <translation>Sortie</translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="266"/>
         <source>Ctrl+Q</source>
         <extracomment>Exit the Bing Backgounds Getter</extracomment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="287"/>
         <source>View</source>
-        <translation>Vue</translation>
+        <translation>Вид</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="316"/>
         <source>No Wallpaper...</source>
-        <translation>Pas de papier peint...</translation>
+        <translation>Нет обои ...</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="372"/>
         <source>Open image</source>
-        <translation>Image ouverte</translation>
+        <translation>Открытое изображение</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="397"/>
         <source>Open in folder</source>
-        <translation>Dossier ouvert</translation>
+        <translation>Открыть в папке</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="439"/>
         <source>Progress</source>
-        <translation>Progrès</translation>
+        <translation>Прогресс</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="505"/>
@@ -195,61 +159,62 @@ p, li { white-space: pre-wrap; }
         <location filename="../form/bingbg.ui" line="587"/>
         <source>About</source>
         <extracomment>About</extracomment>
-        <translation>Sur</translation>
+        <translatorcomment>О</translatorcomment>
+        <translation>О</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="575"/>
         <source>Settings</source>
-        <translation>Paramètres</translation>
+        <translation>Параметры</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="590"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="595"/>
         <source>Author</source>
-        <translation>Auteur</translation>
+        <translation>Автор</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="600"/>
         <source>Desktop Environment</source>
-        <translation>Environnement de bureau</translation>
+        <translation>Среда рабочего стола</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="605"/>
         <source>Language</source>
-        <translation>Langue</translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <location filename="../form/bingbg.ui" line="610"/>
         <source>Proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/bingbg.cpp" line="69"/>
-        <location filename="../src/bingbg.cpp" line="79"/>
-        <source>Do you really want to quit Bing Backgrounds Getter?</source>
-        <translation>Voulez-vous vraiment quitter Bing Backgrounds Getter?</translation>
-    </message>
-    <message>
-        <location filename="../src/bingbg.cpp" line="69"/>
-        <location filename="../src/bingbg.cpp" line="79"/>
-        <source>Yes</source>
-        <translation>Oui</translation>
-    </message>
-    <message>
-        <location filename="../src/bingbg.cpp" line="69"/>
-        <location filename="../src/bingbg.cpp" line="79"/>
-        <source>No</source>
-        <translation>Non</translation>
+        <translation>Прокси</translation>
     </message>
     <message>
         <location filename="../src/bingbg.cpp" line="69"/>
         <location filename="../src/bingbg.cpp" line="79"/>
         <source>Exit?</source>
-        <translation>Sortie?</translation>
+        <translation>Выход?</translation>
+    </message>
+    <message>
+        <location filename="../src/bingbg.cpp" line="69"/>
+        <location filename="../src/bingbg.cpp" line="79"/>
+        <source>Do you really want to quit Bing Backgrounds Getter?</source>
+        <translation>Вы действительно хотите бросить Bing Backgrounds Getter?</translation>
+    </message>
+    <message>
+        <location filename="../src/bingbg.cpp" line="69"/>
+        <location filename="../src/bingbg.cpp" line="79"/>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <location filename="../src/bingbg.cpp" line="69"/>
+        <location filename="../src/bingbg.cpp" line="79"/>
+        <source>No</source>
+        <translation>Нет</translation>
     </message>
 </context>
 <context>
@@ -257,12 +222,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/de.ui" line="14"/>
         <source>Desktop Environment</source>
-        <translation type="unfinished">Environnement de bureau</translation>
+        <translation>Среда рабочего стола</translation>
     </message>
     <message>
         <location filename="../form/de.ui" line="36"/>
         <source>Choose Desktop Environment</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите среду рабочего стола</translation>
     </message>
     <message>
         <location filename="../form/de.ui" line="57"/>
@@ -290,12 +255,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/lang.ui" line="14"/>
         <source>Language</source>
-        <translation>Langue</translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <location filename="../form/lang.ui" line="36"/>
         <source>Change Language</source>
-        <translation>Changer la langue</translation>
+        <translation>Изменение языка</translation>
+    </message>
+    <message>
+        <location filename="../form/lang.ui" line="51"/>
+        <source>The language changes won&apos;t take effect before restart.</source>
+        <translation>Изменения языка не вступят в силу до перезагрузки.</translation>
     </message>
     <message>
         <location filename="../form/lang.ui" line="73"/>
@@ -332,33 +302,28 @@ p, li { white-space: pre-wrap; }
         <source>中文 （繁体）</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../form/lang.ui" line="51"/>
-        <source>The language changes won&apos;t take effect before restart.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>Proxy</name>
     <message>
         <location filename="../form/proxy.ui" line="20"/>
         <source>Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Прокси</translation>
     </message>
     <message>
         <location filename="../form/proxy.ui" line="45"/>
         <source>No proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет прокси</translation>
     </message>
     <message>
         <location filename="../form/proxy.ui" line="52"/>
         <source>Use system proxy settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Использование параметров прокси системы</translation>
     </message>
     <message>
         <location filename="../form/proxy.ui" line="59"/>
         <source>Manual proxy configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ручная конфигурация прокси</translation>
     </message>
     <message>
         <location filename="../form/proxy.ui" line="87"/>
@@ -388,12 +353,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/proxy.ui" line="207"/>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользователя</translation>
     </message>
     <message>
         <location filename="../form/proxy.ui" line="288"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль</translation>
     </message>
     <message>
         <location filename="../form/proxy.ui" line="312"/>
@@ -403,7 +368,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/proxy.ui" line="367"/>
         <source>Hostname</source>
-        <translation type="unfinished"></translation>
+        <translation>Узла</translation>
     </message>
     <message>
         <location filename="../form/proxy.ui" line="380"/>
@@ -413,7 +378,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../form/proxy.ui" line="433"/>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Порт</translation>
     </message>
 </context>
 </TS>
