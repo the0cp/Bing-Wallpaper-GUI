@@ -1,0 +1,33 @@
+**** **** **** **** **** **** ***
+   Bing Backgrounds Getter - Qt
+    		Changelog
+**** **** **** **** **** **** ***
+
+v1.1.3
+	- Add network proxy support.
+	- Add русский support.
+	- Fix i18n: 中文（简体） & 粵語（繁體）support.
+	
+v1.1.2-beta
+	- Fix layout bugs.
+	- Add file-check-exist system.
+	- Better interface:
+		- Add exit confirmation.
+		- Better language selector.
+		- Colorful UI made with style sheet.
+	- Finish the function to set downloaded image to background.
+	- Support:
+		- Mate(I'm using Mate and it works perfectly).
+		- Gnome(test on Debian 10 VM).
+		- Xfce(test on Debian 10 VM).
+		- Cinnamon(test on Debian 10 VM).
+	- Better i18n(I will add Russian support soon):
+	- Support:
+		- English(default).
+		- Français(France)
+		- Français(Canada)
+		- Deutsch
+		- русский(NOT SUPPORT NOW)
+		- 中文（简体）
+		- 粵語（繁體）
+	- First sh*t changelog.
