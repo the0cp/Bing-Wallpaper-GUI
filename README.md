@@ -36,7 +36,7 @@ Support:
 ***I will add Russian support soon***
 
 ## TODO
-- [ ] Add network proxy support
+- [x] Add network proxy support
 - [ ] Better UI
 - [ ] Better i18n
 # It will be better...
