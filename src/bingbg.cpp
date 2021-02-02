@@ -19,7 +19,7 @@ BingBG::BingBG(QWidget *parent)
     }
     ui -> progressBar -> setMinimum(0);
     ui -> progressBar -> setMaximum(100);
-    ui -> progressBar->setValue(0);
+    ui -> progressBar -> setValue(0);
 
     connect(ui -> actionAbout, SIGNAL(triggered()), this, SLOT(openAbout()));
     connect(ui -> actionAuthor, SIGNAL(triggered()), this, SLOT(openAuthor()));
@@ -41,7 +41,7 @@ void BingBG::writeState()
     state.beginGroup("MainWindow");
     state.setValue("size", size());
     state.setValue("pos", pos());
-    state.setValue("JDCheck", ui->checkJd->isChecked());
+    state.setValue("JDCheck", ui -> checkJd -> isChecked());
     state.endGroup();
 }
 
@@ -52,7 +52,7 @@ void BingBG::readState()
     state.beginGroup("MainWindow");
     resize(state.value("size", QSize(400, 400)).toSize());
     move(state.value("pos", QPoint(200,200)).toPoint());
-    ui->checkJd->setChecked(state.value("JDCheck").toBool());
+    ui -> checkJd -> setChecked(state.value("JDCheck").toBool());
     state.endGroup();
 
     char *time = geTime();
@@ -187,19 +187,54 @@ void BingBG::showImg()
 
 void BingBG::doProcessDownloadProgress(qint64 recv_total, qint64 all_total)
 {
-    ui->progressBar->setMaximum(all_total);
-    ui->progressBar->setValue(recv_total);
+    ui -> progressBar -> setMaximum(all_total);
+    ui -> progressBar -> setValue(recv_total);
 }
 
 void BingBG::doProcessError(QNetworkReply::NetworkError code)
 {
     QString error_code(code);
-    ui->labelCurrent->setText(error_code);
+    ui -> labelCurrent -> setText(error_code);
 }
 
 void BingBG::core_downloadXml(QString URL, QString PATH)
 {
-    ui->labelCurrent->setText("downloading xml...");
+    char *user = getlogin();
+    QString quser(user);
+    QString qconfPath = "/home/" + quser + "/.bingbg/qt-config.ini";
+    QSettings settings(qconfPath, QSettings::IniFormat);
+
+    ui -> labelCurrent -> setText("downloading xml...");
+
+    QNetworkProxy proxy;
+    switch(settings.value("Network/Proxy").toInt())
+    {
+        case 0:
+            manager -> setProxy(QNetworkProxy::NoProxy);
+            break;
+        case 1:
+            break;
+        case 2:
+            switch (settings.value("Proxy/Type").toInt())
+            {
+                case 0:
+                    proxy.setType(QNetworkProxy::HttpProxy);
+                    break;
+                case 1:
+                    proxy.setType(QNetworkProxy::Socks5Proxy);
+                    break;
+                case 2:
+                    proxy.setType(QNetworkProxy::Socks5Proxy);
+                    break;
+            }
+            proxy.setHostName(settings.value("Proxy/Hostname").toString());
+            proxy.setPort(settings.value("Proxy/Port").toInt());
+            proxy.setUser(settings.value("Proxy/Username").toString());
+            proxy.setPassword(settings.value("Proxy/Password").toString());
+            manager -> setProxy(proxy);
+            break;
+    }
+
     QNetworkRequest request;
     QString url = URL;
     request.setUrl(QUrl(url));
@@ -212,19 +247,54 @@ void BingBG::core_downloadXml(QString URL, QString PATH)
 
 
     QStringList list = url.split("/");
-    files->setFileName(PATH);
-    bool ret = files->open(QIODevice::WriteOnly|QIODevice::Truncate);
+    files -> setFileName(PATH);
+    bool ret = files -> open(QIODevice::WriteOnly|QIODevice::Truncate);
     if(!ret)
     {
         return;
     }
-    ui->progressBar->setValue(0);
-    ui->progressBar->setMinimum(0);
+    ui -> progressBar -> setValue(0);
+    ui -> progressBar -> setMinimum(0);
 }
 
 void BingBG::core_downloadImg(QString URL, QString PATH)
 {
-    ui->labelCurrent->setText("downloading img...");
+    char *user = getlogin();
+    QString quser(user);
+    QString qconfPath = "/home/" + quser + "/.bingbg/qt-config.ini";
+    QSettings settings(qconfPath, QSettings::IniFormat);
+
+    ui -> labelCurrent -> setText("downloading img...");
+
+    QNetworkProxy proxy;
+    switch(settings.value("Network/Proxy").toInt())
+    {
+        case 0:
+            manager -> setProxy(QNetworkProxy::NoProxy);
+            break;
+        case 1:
+            break;
+        case 2:
+            switch (settings.value("Proxy/Type").toInt())
+            {
+                case 0:
+                    proxy.setType(QNetworkProxy::HttpProxy);
+                    break;
+                case 1:
+                    proxy.setType(QNetworkProxy::Socks5Proxy);
+                    break;
+                case 2:
+                    proxy.setType(QNetworkProxy::Socks5Proxy);
+                    break;
+            }
+            proxy.setHostName(settings.value("Proxy/Hostname").toString());
+            proxy.setPort(settings.value("Proxy/Port").toInt());
+            proxy.setUser(settings.value("Proxy/Username").toString());
+            proxy.setPassword(settings.value("Proxy/Password").toString());
+            manager -> setProxy(proxy);
+            break;
+    }
+
     QNetworkRequest request;
     QString url = URL;
     request.setUrl(QUrl(url));
@@ -233,7 +303,7 @@ void BingBG::core_downloadImg(QString URL, QString PATH)
     connect(reply, &QNetworkReply::finished, this, &BingBG::doProcessFinished);
     connect(reply, &QNetworkReply::finished, this, &BingBG::showImg);
     connect(reply, &QNetworkReply::finished, this, &BingBG::enableBtn);
-    if(ui->checkJd->isChecked() == 1)
+    if(ui -> checkJd -> isChecked() == 1)
     {
         connect(reply, &QNetworkReply::finished, this, &BingBG::setBG);
     }
@@ -242,13 +312,13 @@ void BingBG::core_downloadImg(QString URL, QString PATH)
     connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this, &BingBG::doProcessError);
     QStringList list = url.split("/");
     files->setFileName(PATH);
-    bool ret = files->open(QIODevice::WriteOnly|QIODevice::Truncate);
+    bool ret = files -> open(QIODevice::WriteOnly|QIODevice::Truncate);
     if(!ret)
     {
         return;
     }
-    ui->progressBar->setValue(0);
-    ui->progressBar->setMinimum(0);
+    ui -> progressBar -> setValue(0);
+    ui -> progressBar -> setMinimum(0);
 }
 
 void BingBG::downloadXml()
@@ -270,7 +340,7 @@ void BingBG::downloadImg()
     QString qimgUrl_full = parseXml(time, user);
     if(qimgUrl_full == NULL)
     {
-        ui->labelCurrent->setText("Failed to parse Xml!!!");
+        ui -> labelCurrent -> setText("Failed to parse Xml!!!");
     }
     else
     {
@@ -307,16 +377,16 @@ void BingBG::setBG()
 
 void BingBG::on_btnFetch_clicked()
 {
-    ui->labelCurrent->setText("init...");
+    ui -> labelCurrent -> setText("init...");
     ui -> btnFetch -> setDisabled(true);
     char *time = geTime();
     char *user = getlogin();
-    ui->labelCurrent->setText("making folders...");
+    ui -> labelCurrent -> setText("making folders...");
     makeDir(time, user);
     QString qtime(time);
     QString quser(user);
     QString confPath = "/home/" + quser + "/.bingbg/" + "qt-config.xml";
-    ui->labelImg->setText("...");
+    ui -> labelImg -> setText("...");
     downloadXml();
 }
 
