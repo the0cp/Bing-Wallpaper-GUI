@@ -210,29 +210,60 @@ void BingBG::core_downloadXml(QString URL, QString PATH)
     switch(settings.value("Network/Proxy").toInt())
     {
         case 0:
+        {
             manager -> setProxy(QNetworkProxy::NoProxy);
             break;
+        }
         case 1:
+        {
+            QNetworkProxyQuery proxyQuery(QUrl("www.github.com"));
+            proxyQuery.setQueryType(QNetworkProxyQuery::UrlRequest);
+            proxyQuery.setProtocolTag("http");
+            QList<QNetworkProxy> proxyList = QNetworkProxyFactory::systemProxyForQuery(proxyQuery);
+            if(proxyList.size() > 0 && proxyList[0].type() != QNetworkProxy::NoProxy)
+            {
+                QNetworkProxy::setApplicationProxy(proxyList[0]);
+            }
+            //QNetworkProxyFactory::setUseSystemConfiguration(true);
             break;
+        }
         case 2:
+        {
             switch (settings.value("Proxy/Type").toInt())
             {
                 case 0:
+                {
                     proxy.setType(QNetworkProxy::HttpProxy);
+                    proxy.setHostName(settings.value("Proxy/Hostname").toString());
+                    proxy.setPort(settings.value("Proxy/Port").toInt());
+                    proxy.setUser(settings.value("Proxy/Username").toString());
+                    proxy.setPassword(settings.value("Proxy/Password").toString());
+                    manager -> setProxy(proxy);
                     break;
+                }
                 case 1:
+                {
                     proxy.setType(QNetworkProxy::Socks5Proxy);
+                    proxy.setHostName(settings.value("Proxy/Hostname").toString());
+                    proxy.setPort(settings.value("Proxy/Port").toInt());
+                    proxy.setUser(settings.value("Proxy/Username").toString());
+                    proxy.setPassword(settings.value("Proxy/Password").toString());
+                    manager -> setProxy(proxy);
                     break;
+                }
                 case 2:
+                {
                     proxy.setType(QNetworkProxy::Socks5Proxy);
+                    proxy.setHostName(settings.value("Proxy/Hostname").toString());
+                    proxy.setPort(settings.value("Proxy/Port").toInt());
+                    proxy.setUser(settings.value("Proxy/Username").toString());
+                    proxy.setPassword(settings.value("Proxy/Password").toString());
+                    manager -> setProxy(proxy);
                     break;
+                }
             }
-            proxy.setHostName(settings.value("Proxy/Hostname").toString());
-            proxy.setPort(settings.value("Proxy/Port").toInt());
-            proxy.setUser(settings.value("Proxy/Username").toString());
-            proxy.setPassword(settings.value("Proxy/Password").toString());
-            manager -> setProxy(proxy);
             break;
+        }
     }
 
     QNetworkRequest request;
