@@ -15,6 +15,11 @@ You could also get source code:
 ```shell
 git clone https://github.com/theodorecooper/Linux-Qt-Bingbg.git
 ```
+## CHANGELOG
+### v1.1.3
+* Add network proxy support.
+* Add русский support.
+* Fix i18n: 中文（简体） & 粵語（繁體）support.
 
 ## Support...
 * Gnome 3
