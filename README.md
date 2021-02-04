@@ -1,5 +1,5 @@
 # Linux-Qt-Bingbg
-![Author](https://img.shields.io/badge/Author-Theodore%20Cooper-success.svg)  ![build](https://img.shields.io/badge/build-passing-brightgreen.svg)  ![release](https://img.shields.io/badge/Release-v1.1.3--beta-ff69b4.svg)  ![license](https://img.shields.io/badge/License-GPL--v3-9cf.svg)  
+![Author](https://img.shields.io/badge/Author-Theodore%20Cooper-success.svg)  ![build](https://img.shields.io/badge/build-passing-brightgreen.svg)  ![release](https://img.shields.io/badge/Release-v1.1.3-ff69b4.svg)  ![license](https://img.shields.io/badge/License-GPL--v3-9cf.svg)  
 A GUI version of Bing backgrounds Getter based on Qt for Linux.
 Automtically get daily wallpaper from www.bing.com and set as your desktop background.
 
