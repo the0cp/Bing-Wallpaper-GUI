@@ -38,7 +38,6 @@ Support:
 * русский
 * 中文（简体）
 * 粵語（繁體）  
-***I will add Russian support soon***
 
 ## TODO
 - [x] Add network proxy support
