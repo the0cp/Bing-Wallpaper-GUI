@@ -10,7 +10,7 @@ Automtically get daily wallpaper from www.bing.com and set as your desktop backg
 
 ---
 # How to get
-Download the latest version(deb): [![BingBG-v1.1.2](https://img.shields.io/badge/Version-v1.1.2--beta-ff69b4.svg)](https://github.com/theodorecooper/Linux-Qt-Bingbg/releases/download/v1.1.2-beta/Bingbg-Qt-1.1.2-beta.deb)  
+Download the latest version(deb): [![BingBG-v1.1.3](https://img.shields.io/badge/Version-v1.1.3-ff69b4.svg)](https://github.com/theodorecooper/Linux-Qt-Bingbg/releases/download/v1.3.3/Bingbg-Qt-1.1.3.deb)  
 You could also get source code:
 ```shell
 git clone https://github.com/theodorecooper/Linux-Qt-Bingbg.git
