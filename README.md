@@ -35,7 +35,7 @@ Support:
 * Français(France)
 * Français(Canada)
 * Deutsch
-* русский ***(NOT SUPPORT NOW)***
+* русский
 * 中文（简体）
 * 粵語（繁體）  
 ***I will add Russian support soon***
