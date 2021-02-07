@@ -1,5 +1,5 @@
 # Linux-Qt-Bingbg
-![Author](https://img.shields.io/badge/Author-Theodore%20Cooper-success.svg)  ![build](https://img.shields.io/badge/build-passing-brightgreen.svg)  ![release](https://img.shields.io/badge/Release-v1.1.3-ff69b4.svg)  ![license](https://img.shields.io/badge/License-GPL--v3-9cf.svg)  
+![Author](https://img.shields.io/badge/Author-Theodore%20Cooper-success.svg)  ![build](https://img.shields.io/badge/build-passing-brightgreen.svg)  ![release](https://img.shields.io/badge/Release-v1.1.4-ff69b4.svg)  ![license](https://img.shields.io/badge/License-GPL--v3-9cf.svg)  
 <center><img src = 'https://github.com/theodorecooper/Linux-Qt-Bingbg/blob/main/res/Bingbg.png' width = 200></img></center>   
 A GUI version of Bing backgrounds Getter based on Qt for Linux.
 Automtically get daily wallpaper from www.bing.com and set as your desktop background.
@@ -11,16 +11,16 @@ Automtically get daily wallpaper from www.bing.com and set as your desktop backg
 
 ---
 # How to get
-Download the latest version(deb): [![BingBG-v1.1.3](https://img.shields.io/badge/Version-v1.1.3-ff69b4.svg)](https://github.com/theodorecooper/Linux-Qt-Bingbg/releases/download/v1.3.3/Bingbg-Qt-1.1.3.deb)  
+Download the latest version(deb): [![BingBG-v1.1.4](https://img.shields.io/badge/Version-v1.1.4-ff69b4.svg)](https://github.com/theodorecooper/Linux-Qt-Bingbg/releases/download/v1.1.4/Bingbg-Qt-1.1.4.deb)  
 You could also get source code:
 ```shell
 git clone https://github.com/theodorecooper/Linux-Qt-Bingbg.git
 ```
 ## CHANGELOG
-### v1.1.3
-* Add network proxy support.
-* Add русский support.
-* Fix i18n: 中文（简体） & 粵語（繁體）support.
+### v1.1.4
+* Update UI.
+* Update network proxy support.
+* Fix known bugs.
 
 ## Support...
 * Gnome 3
@@ -42,6 +42,6 @@ Support:
 
 ## TODO
 - [x] Add network proxy support
-- [ ] Better UI
+- [x] Better UI
 - [ ] Better i18n
 # It will be better...
