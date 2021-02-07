@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>267</width>
-    <height>359</height>
+    <width>300</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,10 +19,16 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>400</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
-    <width>402</width>
-    <height>359</height>
+    <width>300</width>
+    <height>400</height>
    </size>
   </property>
   <property name="font">
@@ -41,7 +47,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(48, 48, 48);</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="200,10,5,40,5,10">
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="200,10,5,40,5,5,10">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -118,6 +124,19 @@
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:7pt; color:#808080;&quot;&gt;Copyright 2020-2021 Theodore Cooper. All rights reserved.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">

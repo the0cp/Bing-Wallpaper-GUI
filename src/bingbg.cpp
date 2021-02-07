@@ -156,6 +156,7 @@ void BingBG::doProcessReadyRead()
 void BingBG::doProcessFinished()
 {
     ui->labelCurrent->setText("Done!!!");
+    ui->statusbar->showMessage(tr("Done!!!"),0);
     files -> flush();
     files -> close();
 }
@@ -179,8 +180,6 @@ void BingBG::showImg()
     {
         ui->labelImg->setPixmap(QPixmap::fromImage(*img));
     }
-
-    //ui->labelImg->setPixmap(QPixmap::fromImage(*img));
 }
 
 
@@ -195,6 +194,7 @@ void BingBG::doProcessError(QNetworkReply::NetworkError code)
 {
     QString error_code(code);
     ui -> labelCurrent -> setText(error_code);
+    ui->statusbar->showMessage(error_code,0);
 }
 
 void BingBG::core_downloadXml(QString URL, QString PATH)
@@ -205,6 +205,7 @@ void BingBG::core_downloadXml(QString URL, QString PATH)
     QSettings settings(qconfPath, QSettings::IniFormat);
 
     ui -> labelCurrent -> setText("downloading xml...");
+    ui->statusbar->showMessage(tr("downloading xml..."),0);
 
     QNetworkProxy proxy;
     switch(settings.value("Network/Proxy").toInt())
@@ -296,34 +297,66 @@ void BingBG::core_downloadImg(QString URL, QString PATH)
     QSettings settings(qconfPath, QSettings::IniFormat);
 
     ui -> labelCurrent -> setText("downloading img...");
+    ui->statusbar->showMessage(tr("downloading img..."),0);
 
     QNetworkProxy proxy;
     switch(settings.value("Network/Proxy").toInt())
     {
         case 0:
+        {
             manager -> setProxy(QNetworkProxy::NoProxy);
             break;
+        }
         case 1:
+        {
+            QNetworkProxyQuery proxyQuery(QUrl("www.github.com"));
+            proxyQuery.setQueryType(QNetworkProxyQuery::UrlRequest);
+            proxyQuery.setProtocolTag("http");
+            QList<QNetworkProxy> proxyList = QNetworkProxyFactory::systemProxyForQuery(proxyQuery);
+            if(proxyList.size() > 0 && proxyList[0].type() != QNetworkProxy::NoProxy)
+            {
+                QNetworkProxy::setApplicationProxy(proxyList[0]);
+            }
+            //QNetworkProxyFactory::setUseSystemConfiguration(true);
             break;
+        }
         case 2:
+        {
             switch (settings.value("Proxy/Type").toInt())
             {
                 case 0:
+                {
                     proxy.setType(QNetworkProxy::HttpProxy);
+                    proxy.setHostName(settings.value("Proxy/Hostname").toString());
+                    proxy.setPort(settings.value("Proxy/Port").toInt());
+                    proxy.setUser(settings.value("Proxy/Username").toString());
+                    proxy.setPassword(settings.value("Proxy/Password").toString());
+                    manager -> setProxy(proxy);
                     break;
+                }
                 case 1:
+                {
                     proxy.setType(QNetworkProxy::Socks5Proxy);
+                    proxy.setHostName(settings.value("Proxy/Hostname").toString());
+                    proxy.setPort(settings.value("Proxy/Port").toInt());
+                    proxy.setUser(settings.value("Proxy/Username").toString());
+                    proxy.setPassword(settings.value("Proxy/Password").toString());
+                    manager -> setProxy(proxy);
                     break;
+                }
                 case 2:
+                {
                     proxy.setType(QNetworkProxy::Socks5Proxy);
+                    proxy.setHostName(settings.value("Proxy/Hostname").toString());
+                    proxy.setPort(settings.value("Proxy/Port").toInt());
+                    proxy.setUser(settings.value("Proxy/Username").toString());
+                    proxy.setPassword(settings.value("Proxy/Password").toString());
+                    manager -> setProxy(proxy);
                     break;
+                }
             }
-            proxy.setHostName(settings.value("Proxy/Hostname").toString());
-            proxy.setPort(settings.value("Proxy/Port").toInt());
-            proxy.setUser(settings.value("Proxy/Username").toString());
-            proxy.setPassword(settings.value("Proxy/Password").toString());
-            manager -> setProxy(proxy);
             break;
+        }
     }
 
     QNetworkRequest request;
@@ -372,6 +405,7 @@ void BingBG::downloadImg()
     if(qimgUrl_full == NULL)
     {
         ui -> labelCurrent -> setText("Failed to parse Xml!!!");
+        ui->statusbar->showMessage(tr("Failed to parse Xml!!!"),0);
     }
     else
     {
@@ -406,18 +440,25 @@ void BingBG::setBG()
     }
 }
 
+void BingBG::on_btnSetbg_clicked()
+{
+    setBG();
+}
+
 void BingBG::on_btnFetch_clicked()
 {
     ui -> labelCurrent -> setText("init...");
+    ui->statusbar->showMessage(tr("init..."),0);
     ui -> btnFetch -> setDisabled(true);
     char *time = geTime();
     char *user = getlogin();
     ui -> labelCurrent -> setText("making folders...");
+    ui->statusbar->showMessage(tr("making folders..."),0);
     makeDir(time, user);
     QString qtime(time);
     QString quser(user);
     QString confPath = "/home/" + quser + "/.bingbg/" + "qt-config.xml";
     ui -> labelImg -> setText("...");
+    ui->statusbar->showMessage(tr("---"),0);
     downloadXml();
 }
-

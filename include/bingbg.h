@@ -93,6 +93,8 @@ private slots:
 
     void on_btnOpenfolder_clicked();
 
+    void on_btnSetbg_clicked();
+
 private:
     Ui::BingBG *ui;
 };

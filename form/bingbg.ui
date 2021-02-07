@@ -48,7 +48,7 @@
       <property name="title">
        <string>Get Wallpaper</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2" rowstretch="348,100,20,10,3" columnstretch="12,100,12">
+      <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,30,10,3,1" columnstretch="3,10,3">
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -67,6 +67,19 @@
        <property name="verticalSpacing">
         <number>3</number>
        </property>
+       <item row="2" column="0">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="2" column="1">
         <widget class="QPushButton" name="btnFetch">
          <property name="sizePolicy">
@@ -89,7 +102,13 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(195, 255, 176, 182);</string>
+          <string notr="true">QPushButton {
+    border-radius: 4px; 
+    background-color: rgba(195, 255, 176, 80);
+}
+QPushButton:hover { 
+    background-color: rgba(150, 255, 176, 100);
+}</string>
          </property>
          <property name="text">
           <string>Fetch</string>
@@ -97,63 +116,6 @@
          <property name="shortcut">
           <string notr="true">Return</string>
          </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QGroupBox" name="groupBox_4">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Image URL</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="labelImageUrl">
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-             </font>
-            </property>
-            <property name="lineWidth">
-             <number>10</number>
-            </property>
-            <property name="text">
-             <string>No URL...</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::AutoText</enum>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
         </widget>
        </item>
        <item row="4" column="1">
@@ -165,19 +127,6 @@
           <size>
            <width>20</width>
            <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="2">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
           </size>
          </property>
         </spacer>
@@ -223,8 +172,8 @@ QCheckBox::indicator
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <spacer name="horizontalSpacer_6">
+       <item row="2" column="2">
+        <spacer name="horizontalSpacer_3">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -236,11 +185,23 @@ QCheckBox::indicator
          </property>
         </spacer>
        </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+stop:0 rgba(0,0,225,50),stop:1 rgba(0,225,0,20));</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Bingbg.png&quot; width=&quot;150&quot;/&gt;&lt;/p&gt;&lt;/body&gt;
+&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
     <item row="2" column="0" colspan="2">
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="32,5">
       <item>
        <spacer name="horizontalSpacer">
         <property name="orientation">
@@ -256,8 +217,30 @@ QCheckBox::indicator
       </item>
       <item>
        <widget class="QPushButton" name="btnExit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>23</height>
+         </size>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(252, 128, 128);</string>
+         <string notr="true">QPushButton {
+    border-radius: 4px; 
+    background-color: rgba(195, 255, 176, 50);
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(255, 97, 81, 50);
+}
+
+QPushButton:hover { 
+    background: rgba(255, 97, 81, 50);
+}</string>
         </property>
         <property name="text">
          <string>Exit</string>
@@ -286,7 +269,7 @@ QCheckBox::indicator
       <property name="title">
        <string>View</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout_3" rowstretch="350,3,35,45">
+      <layout class="QGridLayout" name="gridLayout_3" rowstretch="350,3,35,3">
        <item row="0" column="0">
         <widget class="QLabel" name="labelImg">
          <property name="sizePolicy">
@@ -337,7 +320,10 @@ background-color: rgba(80, 255, 118, 15);</string>
         </spacer>
        </item>
        <item row="2" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,2,2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,2,2,2">
+         <property name="spacing">
+          <number>3</number>
+         </property>
          <item>
           <spacer name="horizontalSpacer_4">
            <property name="orientation">
@@ -350,6 +336,40 @@ background-color: rgba(80, 255, 118, 15);</string>
             </size>
            </property>
           </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSetbg">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>115</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    border-radius: 4px; 
+    background-color: rgba(195, 255, 176, 50);
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgba(150, 255, 176, 100);
+}
+QPushButton:hover { 
+    background-color: rgba(150, 255, 176, 100);
+}</string>
+           </property>
+           <property name="text">
+            <string>Set Background</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="btnOpenimg">
@@ -366,7 +386,16 @@ background-color: rgba(80, 255, 118, 15);</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgba(195, 255, 176, 182);</string>
+            <string notr="true">QPushButton {
+    border-radius: 4px; 
+    background-color: rgba(195, 255, 176, 50);
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgba(150, 255, 176, 100);
+}
+QPushButton:hover { 
+    background-color: rgba(150, 255, 176, 100);
+}</string>
            </property>
            <property name="text">
             <string>Open image</string>
@@ -391,7 +420,16 @@ background-color: rgba(80, 255, 118, 15);</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgba(195, 255, 176, 182);</string>
+            <string notr="true">QPushButton {
+    border-radius: 4px; 
+    background-color: rgba(195, 255, 176, 50);
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgba(150, 255, 176, 100);
+}
+QPushButton:hover { 
+    background-color: rgba(150, 255, 176, 100);
+}</string>
            </property>
            <property name="text">
             <string>Open in folder</string>

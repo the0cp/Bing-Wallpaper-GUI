@@ -52,7 +52,6 @@ QString BingBG::parseXml(char *TIME_PX, char *USRNAME)
   	xmlCleanupParser();
   	xmlMemoryDump();
     QString q_imgUrl(img_url);
-    ui -> labelImageUrl -> setText(q_imgUrl);
     return q_imgUrl;
 	
 }

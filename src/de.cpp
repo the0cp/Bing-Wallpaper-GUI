@@ -19,7 +19,7 @@ DE::DE(QWidget *parent) :
     groupButton -> addButton(ui -> rbtn_gnome, 2);
     groupButton -> addButton(ui -> rbtn_cinn, 3);
 
-    //groupButton->button(settings.value("DesktopEnvironment/default").toInt())->setChecked(1);
+    groupButton->button(settings.value("DesktopEnvironment/default").toInt())->setChecked(true);
 }
 
 DE::~DE()
