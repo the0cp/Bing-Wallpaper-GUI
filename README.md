@@ -1,13 +1,21 @@
 # Linux-Qt-Bingbg
-![Author](https://img.shields.io/badge/Author-Theodore%20Cooper-success.svg)  ![build](https://img.shields.io/badge/build-passing-brightgreen.svg)  ![release](https://img.shields.io/badge/Release-v1.1.4-ff69b4.svg)  ![license](https://img.shields.io/badge/License-GPL--v3-9cf.svg)  
-<center><img src = 'https://github.com/theodorecooper/Linux-Qt-Bingbg/blob/main/res/Bingbg.png' width = 200></img></center>   
+![Author](https://img.shields.io/badge/Author-Theodore%20Cooper%20&%20Randir%20Code-success.svg)  ![build](https://img.shields.io/badge/build-passing-brightgreen.svg)  ![release](https://img.shields.io/badge/Release-v1.1.4-ff69b4.svg)  ![license](https://img.shields.io/badge/License-GPL--v3-9cf.svg)  
+
+<img src = 'https://github.com/theodorecooper/Linux-Qt-Bingbg/blob/main/res/Bingbg.png' width = 200></img>   
+
 A GUI version of Bing backgrounds Getter based on Qt for Linux.
 Automtically get daily wallpaper from www.bing.com and set as your desktop background.
 
 # Follow
-### My <a href="https://theodorecooper.github.io" target="_blank">website</a>: `theodorecooper.github.io`
-### My Twitter: `@T_Ccooper`
-### My E-mail: `ccooperr2005@gmail.com`
+### <a href="https://theodorecooper.github.io" target="_blank">Website</a>: `theodorecooper.github.io`
+### Twitter: `@T_Ccooper`
+### E-mail:   
+
+* #### Theodore Cooper: `<ccooperr2005@gmail.com>`   
+
+* #### Randir Code: `<randircode@protonmail.com>`
+
+
 
 ---
 # How to get
@@ -44,4 +52,5 @@ Support:
 - [x] Add network proxy support
 - [x] Better UI
 - [ ] Better i18n
+
 # It will be better...
