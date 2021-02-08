@@ -12,6 +12,8 @@
 #include <QSettings>
 #include <QMessageBox>
 #include <QAbstractButton>
+#include <QSystemTrayIcon>
+#include <QMenu>
 #include "include/about.h"
 #include "include/author.h"
 #include "include/de.h"
@@ -95,7 +97,16 @@ private slots:
 
     void on_btnSetbg_clicked();
 
+    int OnSystemTrayClicked(QSystemTrayIcon::ActivationReason REASON);
+
+    void showMainwindow();
+
 private:
     Ui::BingBG *ui;
+
+    QSystemTrayIcon systray;
+
+    QMenu *traymenu;
+
 };
 #endif // BINGBG_H

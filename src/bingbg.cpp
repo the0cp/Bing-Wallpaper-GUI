@@ -27,6 +27,24 @@ BingBG::BingBG(QWidget *parent)
     connect(ui -> actionLanguage, SIGNAL(triggered()), this, SLOT(openLANG()));
     connect(ui -> actionProxy, SIGNAL(triggered()), this, SLOT(openProxy()));
     initDownload();
+
+    //init system tray
+    systray.setToolTip("Bing Backgrounds Getter");
+    systray.setIcon(QIcon(":/Bingbg-icon.png"));
+
+    //init tray menu
+    traymenu = new QMenu;
+    traymenu -> addAction(ui -> actionFetch);
+    traymenu -> addAction(ui -> actionShow);
+    traymenu -> addAction(ui -> actionExitTray);
+    systray.setContextMenu(traymenu);
+
+    connect(&systray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(OnSystemTrayClicked(QSystemTrayIcon::ActivationReason)));
+    systray.show();
+
+    connect(ui -> actionExitTray, SIGNAL(triggered()), this, SLOT(on_btnExit_clicked()));
+    connect(ui -> actionShow, SIGNAL(triggered()), this, SLOT(showMainwindow()));
+    connect(ui -> actionFetch, SIGNAL(triggered()), this, SLOT(on_btnFetch_clicked()));
 }
 
 BingBG::~BingBG()
@@ -76,6 +94,7 @@ void BingBG::on_btnExit_clicked()
 
 void BingBG::closeEvent(QCloseEvent *event)
 {
+    /*
     if (!(QMessageBox::warning(this,tr("Exit?"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
     {
         writeState();
@@ -84,7 +103,10 @@ void BingBG::closeEvent(QCloseEvent *event)
     else
     {
         event -> ignore();
-    }
+    }*/
+    writeState();
+    this -> hide();
+    event -> ignore();
 }
 
 void BingBG::on_btnOpenfolder_clicked()
@@ -106,6 +128,16 @@ void BingBG::on_btnOpenimg_clicked()
     QString quser(user);
     QString folderPath = "file:/home/" + quser + "/BBG-Download/" + qtime + "/Wallpaper.jpg";
     QDesktopServices::openUrl(QUrl(folderPath, QUrl::TolerantMode));
+}
+
+int BingBG::OnSystemTrayClicked(QSystemTrayIcon::ActivationReason REASON)
+{
+    if(REASON == QSystemTrayIcon::Trigger || REASON == QSystemTrayIcon::DoubleClick)
+    {
+        //show main window
+        this -> showNormal();
+    }
+    return 0;
 }
 
 void BingBG::openAbout()
@@ -182,7 +214,10 @@ void BingBG::showImg()
     }
 }
 
-
+void BingBG::showMainwindow()
+{
+    this -> showNormal();
+}
 
 void BingBG::doProcessDownloadProgress(qint64 recv_total, qint64 all_total)
 {

@@ -632,20 +632,53 @@ QProgressBar::chunk
    <property name="text">
     <string>Author</string>
    </property>
+   <property name="shortcut">
+    <string>Shift+A</string>
+   </property>
   </action>
   <action name="actionDesktop_Environment">
    <property name="text">
     <string>Desktop Environment</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
    </property>
   </action>
   <action name="actionLanguage">
    <property name="text">
     <string>Language</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
   </action>
   <action name="actionProxy">
    <property name="text">
     <string>Proxy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionExitTray">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionShow">
+   <property name="text">
+    <string>Open BingBG</string>
+   </property>
+   <property name="toolTip">
+    <string>Show BingBG</string>
+   </property>
+  </action>
+  <action name="actionFetch">
+   <property name="text">
+    <string>Fetch Wallpaper</string>
+   </property>
+   <property name="toolTip">
+    <string>Fetch today's bing wallpaper</string>
    </property>
   </action>
  </widget>

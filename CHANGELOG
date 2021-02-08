@@ -4,6 +4,7 @@
 **** **** **** **** **** **** ***
 
 v1.1.4
+	- Add system tray menu.
 	- Update UI.
 	- Update network proxy support.
 	- Fix known bugs.
