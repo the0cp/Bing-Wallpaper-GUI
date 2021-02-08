@@ -26,6 +26,7 @@ git clone https://github.com/theodorecooper/Linux-Qt-Bingbg.git
 ```
 ## CHANGELOG
 ### v1.1.4
+* Add system tray menu.
 * Update UI.
 * Update network proxy support.
 * Fix known bugs.
