@@ -193,6 +193,12 @@ void BingBG::doProcessFinished()
     files -> close();
 }
 
+void BingBG::showNotifi()
+{
+    const char *cmd = "notify-send 'Bing Backgrounds Getter' 'Wallpaper set!' --icon=dialog-information";
+    system(cmd);
+}
+
 void BingBG::enableBtn()
 {
     ui -> btnFetch -> setDisabled(false);
@@ -402,6 +408,7 @@ void BingBG::core_downloadImg(QString URL, QString PATH)
     connect(reply, &QNetworkReply::finished, this, &BingBG::doProcessFinished);
     connect(reply, &QNetworkReply::finished, this, &BingBG::showImg);
     connect(reply, &QNetworkReply::finished, this, &BingBG::enableBtn);
+    connect(reply, &QNetworkReply::finished, this, &BingBG::showNotifi);
     if(ui -> checkJd -> isChecked() == 1)
     {
         connect(reply, &QNetworkReply::finished, this, &BingBG::setBG);

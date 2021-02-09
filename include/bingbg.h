@@ -67,6 +67,8 @@ public:
 
     void loadLanguage(int LANGINDEX);
 
+    void showNotifi();
+
     QString parseXml(char *TIME_PX, char *USRNAME);
 
     About *p_OpenAbout;
