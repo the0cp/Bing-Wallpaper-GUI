@@ -26,6 +26,8 @@ git clone https://github.com/theodorecooper/Linux-Qt-Bingbg.git
 ```
 ## CHANGELOG
 ### v1.1.4
+* Add desktop notifications
+* Add auto start support.
 * Add system tray menu.
 * Update UI.
 * Update network proxy support.
