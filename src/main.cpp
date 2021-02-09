@@ -28,6 +28,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    int opt;
+    opterr = 0;
     char *time = geTime();
     char *user = getlogin();
     char *confPath;
@@ -41,6 +43,26 @@ int main(int argc, char *argv[])
         settings.setValue("DesktopEnvironment/default", -1);
     }
     BingBG w;
-    w.show();
+    if(argc != 1)
+    {
+        while((opt = getopt(argc, argv, "sv")) != -1)
+        {
+            if(opt == 's')
+            {
+                w.autoStart();
+                break;
+            }
+            else if (opt == 'v')
+            {
+                printf("\nBing Backgrounds Getter - Qt v1.1.4\nCopyright (C) 2020 - 2021 Theodore Cooper <ccooperr2005@gmail.com>\n\n");
+                exit(1);
+            }
+        }
+    }
+    else
+    {
+        w.show();
+    }
+
     return a.exec();
 }

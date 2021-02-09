@@ -464,20 +464,59 @@ void BingBG::setBG()
     {
         case -1:
             BingBG::openDE();
+            break;
         case 0:
             setBG::setBG_MATE(time, user);
+            break;
         case 1:
             setBG::setBG_XFCE(time, user);
+            break;
         case 2:
             setBG::setBG_GNOME(time, user);
+            break;
         case 3:
             setBG::setBG_CINNAMON(time, user);
+            break;
     }
 }
 
 void BingBG::on_btnSetbg_clicked()
 {
     setBG();
+}
+
+void BingBG::autoStart()
+{
+    on_btnFetch_clicked();
+}
+
+void BingBG::setAutoStart()
+{
+    const char *cmd = "cp /usr/share/applications/BingBG.desktop.desktop $HOME/.config/autostart/BingBG.desktop";
+    system(cmd);
+}
+
+void BingBG::rmAutoStart()
+{
+    const char *cmd = "rm -f $HOME/.config/autostart/BingBG.desktop";
+    system(cmd);
+}
+
+void BingBG::checkAutoStart()
+{
+    char *user = getlogin();
+    char *autoStart;
+    asprintf(&autoStart, "%s%s%s", "/home/", user, "/.config/autostart/BingBG.desktop");
+    if(access(autoStart, 0) == -1)
+    {
+        ui -> actionAutoStart -> setChecked(true);
+        //set action true
+    }
+    else
+    {
+        ui -> actionAutoStart -> setChecked(false);
+        //set false
+    }
 }
 
 void BingBG::on_btnFetch_clicked()
@@ -496,4 +535,16 @@ void BingBG::on_btnFetch_clicked()
     ui -> labelImg -> setText("...");
     ui->statusbar->showMessage(tr("---"),0);
     downloadXml();
+}
+
+void BingBG::on_actionAutoStart_toggled(bool checked)
+{
+    if(checked == true)
+    {
+        setAutoStart();
+    }
+    else
+    {
+        rmAutoStart();
+    }
 }

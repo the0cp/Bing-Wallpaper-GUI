@@ -33,6 +33,8 @@ public:
 
     ~BingBG();
 
+    void autoStart();
+
     void writeState();
 
     void readState();
@@ -100,6 +102,14 @@ private slots:
     int OnSystemTrayClicked(QSystemTrayIcon::ActivationReason REASON);
 
     void showMainwindow();
+
+    void setAutoStart();
+
+    void rmAutoStart();
+
+    void checkAutoStart();
+
+    void on_actionAutoStart_toggled(bool checked);
 
 private:
     Ui::BingBG *ui;

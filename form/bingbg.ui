@@ -615,6 +615,7 @@ QProgressBar::chunk
     <addaction name="actionDesktop_Environment"/>
     <addaction name="actionProxy"/>
     <addaction name="actionLanguage"/>
+    <addaction name="actionAutoStart"/>
    </widget>
    <addaction name="menuSettings"/>
    <addaction name="menuAbout"/>
@@ -679,6 +680,14 @@ QProgressBar::chunk
    </property>
    <property name="toolTip">
     <string>Fetch today's bing wallpaper</string>
+   </property>
+  </action>
+  <action name="actionAutoStart">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Auto Start</string>
    </property>
   </action>
  </widget>
