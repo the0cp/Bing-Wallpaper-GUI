@@ -499,7 +499,7 @@ void BingBG::autoStart()
 
 void BingBG::setAutoStart()
 {
-    const char *cmd = "cp /usr/share/applications/BingBG.desktop.desktop $HOME/.config/autostart/BingBG.desktop";
+    const char *cmd = "cp /opt/bingbg-qt/BingBG-autoStart.desktop $HOME/.config/autostart/BingBG.desktop";
     system(cmd);
 }
 

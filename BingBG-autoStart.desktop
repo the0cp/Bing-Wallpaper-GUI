@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Name=BingBG
+Exec=/opt/bingbg-qt/AppRun -s %F
+Icon=/usr/share/icons/Bingbg.png
+Comment=BingBG-Qt
+Terminal=false
+Name[en_US]=BingBG-autoStart
+Categories=Accessories; System; Internet;
