@@ -28,6 +28,13 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QLockFile *lockFile = new QLockFile("/tmp/bingbg.app.lock");
+    if(!lockFile -> tryLock(2000))
+    {
+        QMessageBox msg(QMessageBox::NoIcon, "Warning", "BingBG is already running!!!");
+        msg.exec();
+        return 0;
+    }
     int opt;
     opterr = 0;
     char *time = geTime();

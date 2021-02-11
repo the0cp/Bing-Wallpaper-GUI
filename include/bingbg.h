@@ -14,6 +14,7 @@
 #include <QAbstractButton>
 #include <QSystemTrayIcon>
 #include <QMenu>
+#include <QLockFile>
 #include "include/about.h"
 #include "include/author.h"
 #include "include/de.h"
