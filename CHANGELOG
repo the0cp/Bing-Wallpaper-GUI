@@ -4,6 +4,7 @@
 **** **** **** **** **** **** ***
 
 v1.1.4
+	- Add file lock.
 	- Add desktop notifications
 	- Add auto start support.
 	- Add system tray menu.
