@@ -73,6 +73,8 @@ void BingBG::readState()
     ui -> checkJd -> setChecked(state.value("JDCheck").toBool());
     state.endGroup();
 
+    checkAutoStart();
+
     char *time = geTime();
     char *user = getlogin();
     QString qtime(time);
@@ -514,7 +516,7 @@ void BingBG::checkAutoStart()
     char *user = getlogin();
     char *autoStart;
     asprintf(&autoStart, "%s%s%s", "/home/", user, "/.config/autostart/BingBG.desktop");
-    if(access(autoStart, 0) == -1)
+    if(access(autoStart, 0) == 0)
     {
         ui -> actionAutoStart -> setChecked(true);
         //set action true
