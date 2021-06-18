@@ -86,11 +86,8 @@ void BingBG::readState()
 
 void BingBG::on_btnExit_clicked()
 {
-    if (!(QMessageBox::warning(this,tr("Exit?"),tr("Do you really want to quit Bing Backgrounds Getter?"),tr("Yes"),tr("No"))))
-    {
         writeState();
-        exit(0);
-    }
+        exit(1);
 }
 
 
