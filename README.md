@@ -31,7 +31,7 @@ git clone https://github.com/theodorecooper/Linux-Qt-Bingbg.git
 * Add system tray menu.
 * Update UI.
 * Update network proxy support.
-* Fix known bugs.
+* Fix system tray bugs.
 
 ## Support...
 * Gnome 3
