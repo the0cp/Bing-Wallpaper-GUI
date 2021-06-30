@@ -56,6 +56,4 @@ Support:
 - [x] Add desktop notification.
 - [x] Add network proxy support.
 - [x] Better UI.
-- [ ] Better i18n.
-
-# It will be better...
+- [x] Better i18n.
