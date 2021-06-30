@@ -2,7 +2,7 @@
  * Author: Theodore Cooper                                                 *
  * License: GNU General Public License                                     *
  *                                                                         *
- * Bing-Backgrounds-Getter-v1.2.2                                          *
+ * Bing-Backgrounds-Getter-v1.1.4                                          *
  *                                                                         *
  * Copyright (C) 2021 Theodore Cooper <ccooperr2005@gmail.com>             *
  *                                                                         *
