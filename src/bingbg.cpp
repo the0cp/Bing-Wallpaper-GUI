@@ -91,7 +91,7 @@ void BingBG::readState()
 
     state.beginGroup("MainWindow");
     resize(state.value("size", QSize(400, 400)).toSize());
-    move(state.value("pos", QPoint(200,200)).toPoint());
+    move(state.value("pos", QPoint(200, 200)).toPoint());
     ui -> checkJd -> setChecked(state.value("JDCheck").toBool());
     state.endGroup();
 
