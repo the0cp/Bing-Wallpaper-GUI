@@ -41,7 +41,7 @@ git clone https://github.com/theodorecooper/Linux-Qt-Bingbg.git
 * Just download, do not set as background 
 * ***DO NOT SUPPORT KDE***
 
-## Language
+## Language(i18n)
 Support:
 * English(default).
 * Français(France)
